@@ -23,7 +23,7 @@ from utils.convert_to_executorch import (
     write_model_llama,
 )
 from accelerate import Accelerator
-log: Logger = utils.get_logger("spinquant")
+log: Logger = utils.get_logger("evaluation")
     
     # 4、train:设置tempweight然后采用weightquant
     
