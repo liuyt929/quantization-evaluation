@@ -28,6 +28,6 @@ token: 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
 cd quantization-evaluation
 python script.py
 ```
-输出将重定向在log-70b-0.txt中
+输出将重定向在log-70b-0.txt和log-70b-1.txt中
 
 
