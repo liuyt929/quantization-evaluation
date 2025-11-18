@@ -32,17 +32,17 @@ def train() -> None:
     transformers.set_seed(ptq_args.seed)
     
     # inference时可注释掉
-    # lm = model_utils.LM(model_args,ptq_args) #get_model
+    lm = model_utils.LM(model_args,ptq_args) #get_model
 
-    # lm.model.eval()
+    lm.model.eval()
 
-    # fuse_norm_utils.fuse_layer_norms(lm.model)
-    # lm.generate_rotate_parameters(args=training_args,ptq_args=ptq_args)
-    # # 3、train: 设置tempweight然后采用weightquant
-    # lm.set_quant_state(use_weight_quant=training_args.train_enable_wquant,use_act_quant=True)
-    # lm = rotate_smooth_train(training_args,lm,ptq_args,model_args)    
-    # # lm.rotate_smooth_model_inplace(training_args=training_args)
-    # del lm
+    fuse_norm_utils.fuse_layer_norms(lm.model)
+    lm.generate_rotate_parameters(args=training_args,ptq_args=ptq_args)
+    # 3、train: 设置tempweight然后采用weightquant
+    lm.set_quant_state(use_weight_quant=training_args.train_enable_wquant,use_act_quant=True)
+    lm = rotate_smooth_train(training_args,lm,ptq_args,model_args)    
+    # lm.rotate_smooth_model_inplace(training_args=training_args)
+    del lm
     
     # load_model        
     config = transformers.AutoConfig.from_pretrained(
