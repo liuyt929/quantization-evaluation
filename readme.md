@@ -11,6 +11,12 @@ pip install -r requirements.txt
 pip install lm_eval
 pip install fast-hadamard-transform
 ```
+若fast-hadamard-transform下载失败，可使用
+```
+git clone https://github.com/Dao-AILab/fast-hadamard-transform.git
+cd fast-hadamard-transform
+pip install -v .
+```
 #### 若需要下载Llama 3.1 70B，则huggingface 登录
 ```
 huggingface-cli login
