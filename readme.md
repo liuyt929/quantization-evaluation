@@ -17,11 +17,12 @@ git clone https://github.com/Dao-AILab/fast-hadamard-transform.git
 cd fast-hadamard-transform
 pip install -v .
 ```
+
+
 #### 若需要下载Llama 3.1 70B，则huggingface 登录
 ```
 huggingface-cli login
 ```
-token: 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
 
 #### 代码运行
 ```
@@ -29,5 +30,3 @@ cd quantization-evaluation
 python script.py
 ```
 输出将重定向在log-70b-0.txt和log-70b-1.txt中
-
-
