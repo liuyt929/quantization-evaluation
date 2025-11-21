@@ -49,7 +49,7 @@ def get_model(
         model = models.LlamaForCausalLM.from_pretrained(
             model_name,
             torch_dtype=dtype,
-            device_map='cpu',
+            # device_map='cpu',
             use_auth_token=hf_token,
             low_cpu_mem_usage=True,
             config = config,
@@ -58,7 +58,7 @@ def get_model(
         tokenizer = transformers.LlamaTokenizerFast.from_pretrained(model_name,use_fact=True,add_eos_token=False,add_bos_token=False,padding_side="right")
     if process_word_embeddings:
         model.lm_head.weight.data = model.model.embed_tokens.weight.data.clone()
-    model.lm_head.weight.to('cpu')    
+    # model.lm_head.weight.to('cpu')    
     model.seqlen = 2048
     if "llama" in model_name.lower():
         from train_utils.quant_layer import QuantDecoderLayer,QuantRMSNorm,QuantLinear,QuantEmbedding

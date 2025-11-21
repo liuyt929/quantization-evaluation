@@ -21,9 +21,13 @@ from train_utils.trainer import MyTrainer
 from loguru import logger
 from utils.utils import distribute_model
 
+import torch.distributed as dist  
 
 def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
-
+    dist.init_process_group(backend="nccl")
+    local_rank=utils.utils.get_local_rank()
+    # log.info("the rank is {}".format(local_rank))
+    torch.distributed.barrier()
     logger.info("train rotate model")
     if args.smooth_up_down:
         logger.info("train smooth up down")
@@ -43,9 +47,9 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
         lm.tokenizer.pad_token = lm.tokenizer.eos_token
     param_keys = get_param_keys(lm.model)
     print(param_keys)
-    utils.utils.cleanup_memory()
-    if args.train_distribute:
-        distribute_model(lm.model)
+    
+    # if args.train_distribute:
+    #     distribute_model(lm.model)
     print(lm.model)
     trainer = MyTrainer(
         model=lm.model,
@@ -54,22 +58,29 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
         eval_dataset=eval_dataset,
         args=args,
     )  
+    torch.distributed.barrier()
     # st = torch.load(f"{args.output_dir}/model.bin", map_location="cpu")
     # model_state_dict = trainer.model.state_dict()
     # model_state_dict.update(st)
     # trainer.model.load_state_dict(model_state_dict, strict=False)
     trainer.train()
-    acc = trainer.accelerator
-    st = {k: v for k, v in (acc.get_state_dict(trainer.model)).items() if k in param_keys}
-    acc.wait_for_everyone()
-    if acc.is_main_process:
+    # acc = trainer.accelerator
+    # st = {k: v for k, v in (acc.get_state_dict(trainer.model)).items() if k in param_keys}
+    # acc.wait_for_everyone()
+    # if acc.is_main_process:
+    #     torch.save(st, f"{args.output_dir}/model.bin")
+    # else:
+    #     print(f"sub process{acc.process_index} exit")
+    #     exit(0)
+    # lm.model = acc.unwrap_model(trainer.model)
+    if training_args.fsdp!="" and training_args.fsdp!=[]:
+        cpu_state=utils.utils.pt_fsdp_state_dict(trainer.model)
+        st = {k: v for k, v in cpu_state.items() if k in param_keys}
+    if local_rank==0:
         torch.save(st, f"{args.output_dir}/model.bin")
-    else:
-        print(f"sub process{acc.process_index} exit")
-        exit(0)
-    lm.model = acc.unwrap_model(trainer.model)
-    if args.train_distribute:
-        remove_hook_from_module(lm.model)
+    dist.barrier()
+    # if args.train_distribute:
+    #     remove_hook_from_module(lm.model)
     return lm
 
 
