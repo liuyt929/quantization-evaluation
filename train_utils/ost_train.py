@@ -73,7 +73,7 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
     #     print(f"sub process{acc.process_index} exit")
     #     exit(0)
     # lm.model = acc.unwrap_model(trainer.model)
-    if training_args.fsdp!="" and training_args.fsdp!=[]:
+    if args.fsdp!="" and args.fsdp!=[]:
         cpu_state=utils.utils.pt_fsdp_state_dict(trainer.model)
         st = {k: v for k, v in cpu_state.items() if k in param_keys}
     if local_rank==0:
