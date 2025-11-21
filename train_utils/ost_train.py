@@ -48,8 +48,8 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
     param_keys = get_param_keys(lm.model)
     print(param_keys)
     
-    # if args.train_distribute:
-    #     distribute_model(lm.model)
+    if args.train_distribute:
+        distribute_model(lm.model)
     print(lm.model)
     trainer = MyTrainer(
         model=lm.model,
@@ -79,8 +79,8 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
     if local_rank==0:
         torch.save(st, f"{args.output_dir}/model.bin")
     dist.barrier()
-    # if args.train_distribute:
-    #     remove_hook_from_module(lm.model)
+    if args.train_distribute:
+        remove_hook_from_module(lm.model)
     return lm
 
 
