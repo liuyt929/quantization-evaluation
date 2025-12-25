@@ -21,13 +21,9 @@ from train_utils.trainer import MyTrainer
 from loguru import logger
 from utils.utils import distribute_model
 
-import torch.distributed as dist  
 
 def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
-    dist.init_process_group(backend="nccl")
-    local_rank=utils.utils.get_local_rank()
-    # log.info("the rank is {}".format(local_rank))
-    torch.distributed.barrier()
+
     logger.info("train rotate model")
     if args.smooth_up_down:
         logger.info("train smooth up down")
@@ -41,15 +37,16 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
         logger.info("smooth norm linear")
 
     lm.model.config.use_cache = False
-    
+
     train_dataset, eval_dataset = get_train_eval_dataset(args, lm.tokenizer,ptq_args,model_args)
     if lm.tokenizer.pad_token is None:
         lm.tokenizer.pad_token = lm.tokenizer.eos_token
     param_keys = get_param_keys(lm.model)
     print(param_keys)
-    
+    utils.utils.cleanup_memory()
     if args.train_distribute:
         distribute_model(lm.model)
+    print(f"REAL_NAME: {lm.model.model.layers[0].__class__.__name__}")
     print(lm.model)
     trainer = MyTrainer(
         model=lm.model,
@@ -58,27 +55,39 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
         eval_dataset=eval_dataset,
         args=args,
     )  
-    torch.distributed.barrier()
+    import torch.distributed as dist    
+    if dist.is_initialized() and dist.get_world_size() > 1:
+        print(f"--- 正在同步 Rank 0 的旋转矩阵到所有显卡 ---")
+        
+        # 强制所有卡停在这里，防止有的卡跑得太快
+        dist.barrier()
+        
+        with torch.no_grad():
+            for m in lm.model.modules():
+                # 找到你那些被忽略的模块
+                from data_normalization import smooth_utils,rotation_utils
+                if isinstance(m, (rotation_utils.RotateModule, smooth_utils.SmoothModule)):
+                    for param in m.parameters():
+                        # 把 Rank 0 的初始值分发给所有人，保证“起跑线”绝对一致
+                        dist.broadcast(param.data, src=0)
+        
+        # # 同步完成，大家一起出发
+        dist.barrier()
+        print(f"--- 同步完成，开始训练 ---")
     # st = torch.load(f"{args.output_dir}/model.bin", map_location="cpu")
     # model_state_dict = trainer.model.state_dict()
     # model_state_dict.update(st)
     # trainer.model.load_state_dict(model_state_dict, strict=False)
     trainer.train()
-    # acc = trainer.accelerator
-    # st = {k: v for k, v in (acc.get_state_dict(trainer.model)).items() if k in param_keys}
-    # acc.wait_for_everyone()
-    # if acc.is_main_process:
-    #     torch.save(st, f"{args.output_dir}/model.bin")
-    # else:
-    #     print(f"sub process{acc.process_index} exit")
-    #     exit(0)
-    # lm.model = acc.unwrap_model(trainer.model)
-    if args.fsdp!="" and args.fsdp!=[]:
-        cpu_state=utils.utils.pt_fsdp_state_dict(trainer.model)
-        st = {k: v for k, v in cpu_state.items() if k in param_keys}
-    if local_rank==0:
+    acc = trainer.accelerator
+    st = {k: v for k, v in (acc.get_state_dict(trainer.model)).items() if k in param_keys}
+    acc.wait_for_everyone()
+    if acc.is_main_process:
         torch.save(st, f"{args.output_dir}/model.bin")
-    dist.barrier()
+    else:
+        print(f"sub process{acc.process_index} exit")
+        exit(0)
+    lm.model = acc.unwrap_model(trainer.model)
     if args.train_distribute:
         remove_hook_from_module(lm.model)
     return lm

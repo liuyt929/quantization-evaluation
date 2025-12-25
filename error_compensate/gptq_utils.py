@@ -367,8 +367,8 @@ def gptq_fwrd(model, dataloader, args, accelerator=None):
         inps, outs = outs, inps
 
     # 在分布式环境中同步所有进程
-    if accelerator is not None:
-        accelerator.wait_for_everyone()
+    # if accelerator is not None:
+    #     accelerator.wait_for_everyone()
 
     model.config.use_cache = use_cache
     utils.cleanup_memory(verbos=True)

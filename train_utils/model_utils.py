@@ -50,14 +50,16 @@ def get_model(
             model_name,
             torch_dtype=dtype,
             # device_map='cpu',
+            device_map=None,
             use_auth_token=hf_token,
             low_cpu_mem_usage=True,
             config = config,
-            # cache_dir='/media/DATA-SSD/liuyutong/allQuant'
+            cache_dir='../'
         )
         tokenizer = transformers.LlamaTokenizerFast.from_pretrained(model_name,use_fact=True,add_eos_token=False,add_bos_token=False,padding_side="right")
     if process_word_embeddings:
-        model.lm_head.weight.data = model.model.embed_tokens.weight.data.clone()
+        with torch.no_grad():
+            model.lm_head.weight.copy_(model.model.embed_tokens.weight)
     # model.lm_head.weight.to('cpu')    
     model.seqlen = 2048
     if "llama" in model_name.lower():

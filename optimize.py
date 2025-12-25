@@ -24,11 +24,23 @@ from utils.convert_to_executorch import (
 )
 from accelerate import Accelerator
 log: Logger = utils.get_logger("evaluation")
-    
-    # 4、train:设置tempweight然后采用weightquant
+import torch.distributed as dist    
+import os
     
 def train() -> None:
+
+    dist.init_process_group(backend="nccl")
     model_args, training_args, ptq_args = process_args_ptq()
+    local_rank=utils.get_local_rank()
+    if dist.is_initialized():
+        rank = dist.get_rank()
+        world_size = dist.get_world_size()
+        print(f"我是进程 {rank}，总进程数 {world_size}，当前设备: {torch.cuda.current_device()}")
+    else:
+        print("分布式环境未初始化")
+    log.info("the rank is {}".format(local_rank))
+    torch.distributed.barrier()
+
     transformers.set_seed(ptq_args.seed)
     
     # inference时可注释掉
@@ -38,18 +50,21 @@ def train() -> None:
 
     fuse_norm_utils.fuse_layer_norms(lm.model)
     lm.generate_rotate_parameters(args=training_args,ptq_args=ptq_args)
-    # 3、train: 设置tempweight然后采用weightquant
+    
     lm.set_quant_state(use_weight_quant=training_args.train_enable_wquant,use_act_quant=True)
     lm = rotate_smooth_train(training_args,lm,ptq_args,model_args)    
-    # lm.rotate_smooth_model_inplace(training_args=training_args)
     del lm
     
-    # load_model        
+    # load_model   
+    
+    # 这后面一个cuda应该就能跑
+    import sys        
+    if dist.is_initialized() and dist.get_rank() != 0:
+        sys.exit(0)     
     config = transformers.AutoConfig.from_pretrained(
         model_args.input_model, token=model_args.access_token
     )
-    # accelerator = Accelerator()    
-    accelerator = Accelerator()
+    accelerator = None 
     # Llama v3.2 specific: Spinquant is not compatiable with tie_word_embeddings, clone lm_head from embed_tokens
     process_word_embeddings=False
     if config.tie_word_embeddings:
@@ -70,20 +85,23 @@ def train() -> None:
         config=config,
         torch_dtype=torch.bfloat16,
         token=model_args.access_token,
-        # cache_dir='',
-        # device_map="auto"
-        device_map="auto",  # 使用自动设备映射
+        cache_dir='../',
+        # device_map=None, 
+        # low_cpu_mem_usage=True,
+        device_map="auto"
+        # device_map="auto",  # 使用自动设备映射
         # max_memory={i: "6GB" for i in range(torch.cuda.device_count())}  # 限制每个GPU内存
-
-        )
+    )
     if process_word_embeddings:
         model.lm_head.weight.data = model.model.embed_tokens.weight.data.clone().to(model.model.norm.weight.device)
         # model.lm_head.weight=model.lm_head.weight.to(model.model.norm.weight.device)
-    # model.cuda()
-# model = accelerator.prepare(model)
+    model.cuda()
+    # model = accelerator.prepare(model)
+    
     model.eval()
     fuse_norm_utils.fuse_layer_norms(model)
     model_utils.rotate_smooth_model_inplace(model,training_args.output_dir+'/model.bin',training_args)
+    # accelerator.prepare(model)
     model.seqlen = training_args.model_max_length
     model.config.use_cache = False
     testloader = data_utils.get_wikitext2(
@@ -116,8 +134,6 @@ def train() -> None:
                 continue
             qlayers[name].add_low_rank(True,ptq_args.rank)
             svd_utils.LayerSvdCompute.approximate(qlayers[name], name, ptq_args)
-            
-
     if ptq_args.w_bits < 16:
         save_dict = {}
         if ptq_args.load_qmodel_path:  # Load Quantized Rotated Model
@@ -209,10 +225,11 @@ def train() -> None:
    
     # Add Input Quantization
     # model = accelerator.prepare(model)
-
+    utils.distribute_model(model)
     dataset_ppl = eval_utils.evaluator(model, testloader, ptq_args,accelerator)
     log.info("wiki2 ppl is: {}".format(dataset_ppl))
     eval.evaluation(model,tokenizer)
+    # dist.barrier()
 
 if __name__ == "__main__":
     train()
