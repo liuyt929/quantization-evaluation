@@ -5,6 +5,7 @@ import utils
 import torch,torch.nn as nn,torch.nn.functional as F,transformers
 from loguru import logger
 from train_utils.ost_train import rotate_smooth_train
+from torch.distributed.fsdp import FullyShardedDataParallel as FSDP, CPUOffload, ShardingStrategy
 
 from logging import Logger
 
@@ -14,6 +15,7 @@ from transformers import LlamaTokenizerFast,LlamaForCausalLM,AutoTokenizer,AutoM
 import transformers
 # from models.modeling_llama import LlamaForCausalLM
 from utils import data_utils, eval_utils, utils,fuse_norm_utils,hadamard_utils,quant_utils,eval
+from utils import memory_utils
 from utils.process_args import process_args_ptq
 from data_normalization.utils import rotate_smooth_model_inplace
 from tqdm import tqdm
@@ -26,12 +28,27 @@ from accelerate import Accelerator
 log: Logger = utils.get_logger("evaluation")
 import torch.distributed as dist    
 import os
+from torch.distributed.fsdp import fully_shard
+from torch.distributed.fsdp import FSDPModule
+from torch.distributed.tensor import Shard
+
+
+def inspect_model(model: FSDPModule):
+    assert isinstance(model, FSDPModule)
+
+    if torch.distributed.get_rank() == 0:
+        print(model)
+
+    for param in model.parameters():
+        assert param.placements == (Shard(0),)
     
+
 def train() -> None:
 
     dist.init_process_group(backend="nccl")
     model_args, training_args, ptq_args = process_args_ptq()
     local_rank=utils.get_local_rank()
+    memory_utils.distributed_memory_snapshot("after_init", getattr(training_args, 'output_dir', None))
     if dist.is_initialized():
         rank = dist.get_rank()
         world_size = dist.get_world_size()
@@ -44,16 +61,37 @@ def train() -> None:
     transformers.set_seed(ptq_args.seed)
     
     # inference时可注释掉
+    memory_utils.distributed_memory_snapshot("before_LM_build", getattr(training_args, 'output_dir', None))
     lm = model_utils.LM(model_args,ptq_args) #get_model
+    for layer in lm.model.model.layers:
+        fully_shard(layer)
+    fully_shard(lm.model.model)
+    fully_shard(lm.model.lm_head)
+    inspect_model(lm.model.model)
+    memory_utils.distributed_memory_snapshot("after_LM_build", getattr(training_args, 'output_dir', None))
+    
+    # # Apply FSDP to shard model across GPUs/nodes
+    # lm.model = FSDP(
+    #     lm.model,
+    #     sharding_strategy=ShardingStrategy.FULL_SHARD,
+    #     cpu_offload=CPUOffload(offload_params=False),
+    #     device_id=torch.cuda.current_device(),
+    # )
+    # memory_utils.distributed_memory_snapshot("after_FSDP_wrap", getattr(training_args, 'output_dir', None))
 
     lm.model.eval()
 
     fuse_norm_utils.fuse_layer_norms(lm.model)
+    memory_utils.distributed_memory_snapshot("before_generate_rotate_parameters", getattr(training_args, 'output_dir', None))
     lm.generate_rotate_parameters(args=training_args,ptq_args=ptq_args)
+    memory_utils.distributed_memory_snapshot("after_generate_rotate_parameters", getattr(training_args, 'output_dir', None))
     
     lm.set_quant_state(use_weight_quant=training_args.train_enable_wquant,use_act_quant=True)
+    memory_utils.distributed_memory_snapshot("before_rotate_smooth_train", getattr(training_args, 'output_dir', None))
     lm = rotate_smooth_train(training_args,lm,ptq_args,model_args)    
+    memory_utils.distributed_memory_snapshot("after_rotate_smooth_train", getattr(training_args, 'output_dir', None))
     del lm
+    memory_utils.distributed_memory_snapshot("after_free_temp_LM", getattr(training_args, 'output_dir', None))
     
     # load_model   
     
@@ -80,6 +118,7 @@ def train() -> None:
     )
     log.info("Complete tokenizer loading...")
     
+    memory_utils.distributed_memory_snapshot("before_load_fp_model", getattr(training_args, 'output_dir', None))
     model = AutoModelForCausalLM.from_pretrained(
         pretrained_model_name_or_path=model_args.input_model,
         config=config,
@@ -96,11 +135,14 @@ def train() -> None:
         model.lm_head.weight.data = model.model.embed_tokens.weight.data.clone().to(model.model.norm.weight.device)
         # model.lm_head.weight=model.lm_head.weight.to(model.model.norm.weight.device)
     model.cuda()
+    memory_utils.distributed_memory_snapshot("after_model_cuda", getattr(training_args, 'output_dir', None))
     # model = accelerator.prepare(model)
     
     model.eval()
     fuse_norm_utils.fuse_layer_norms(model)
+    memory_utils.distributed_memory_snapshot("before_rotate_smooth_inplace", getattr(training_args, 'output_dir', None))
     model_utils.rotate_smooth_model_inplace(model,training_args.output_dir+'/model.bin',training_args)
+    memory_utils.distributed_memory_snapshot("after_rotate_smooth_inplace", getattr(training_args, 'output_dir', None))
     # accelerator.prepare(model)
     model.seqlen = training_args.model_max_length
     model.config.use_cache = False
@@ -162,10 +204,14 @@ def train() -> None:
                     custom_layers=[model.model.embed_tokens, model.lm_head],
                 )
             # quantize other layers with gptq
+            memory_utils.distributed_memory_snapshot("before_gptq_fwrd", getattr(training_args, 'output_dir', None))
             quantizers = gptq_utils.gptq_fwrd(model, trainloader, ptq_args,accelerator)
+            memory_utils.distributed_memory_snapshot("after_gptq_fwrd", getattr(training_args, 'output_dir', None))
             save_dict["w_quantizers"] = quantizers
         else:  # RTN Weight Quantization
+            memory_utils.distributed_memory_snapshot("before_rtn_fwrd", getattr(training_args, 'output_dir', None))
             quantizers = gptq_utils.rtn_fwrd(model, "cuda", ptq_args)
+            memory_utils.distributed_memory_snapshot("after_rtn_fwrd", getattr(training_args, 'output_dir', None))
             save_dict["w_quantizers"] = quantizers
 
         if ptq_args.save_qmodel_path:
@@ -225,10 +271,14 @@ def train() -> None:
    
     # Add Input Quantization
     # model = accelerator.prepare(model)
+    memory_utils.distributed_memory_snapshot("before_distribute_model", getattr(training_args, 'output_dir', None))
     utils.distribute_model(model)
+    memory_utils.distributed_memory_snapshot("after_distribute_model", getattr(training_args, 'output_dir', None))
     dataset_ppl = eval_utils.evaluator(model, testloader, ptq_args,accelerator)
+    memory_utils.distributed_memory_snapshot("after_evaluator", getattr(training_args, 'output_dir', None))
     log.info("wiki2 ppl is: {}".format(dataset_ppl))
     eval.evaluation(model,tokenizer)
+    memory_utils.distributed_memory_snapshot("after_eval", getattr(training_args, 'output_dir', None))
     # dist.barrier()
 
 if __name__ == "__main__":

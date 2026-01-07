@@ -1,5 +1,6 @@
 import torch,transformers,sys,os,torch.nn as nn,geoopt,typing,utils,transformers,tqdm,math,models
 import utils.hadamard_utils as hadamard_utils
+from utils import memory_utils
 from utils.hadamard_utils import random_hadamard_matrix, apply_exact_had_to_linear, is_pow2
 from fast_hadamard_transform import hadamard_transform
 from utils.fuse_norm_utils import fuse_ln_linear
@@ -13,6 +14,7 @@ from utils.utils import DEV,rdtype,Rdtype
 from utils import quant_utils
 from geoopt.manifolds import EuclideanStiefel,Stiefel
 import torch.nn.functional as F
+import torch.distributed as dist
 def skip(*args,**kwargs):
     pass
      
@@ -124,7 +126,18 @@ class LM:
         head_dim = model_dim // config.num_attention_heads
 
         
-        R_res_value = random_hadamard_matrix(model.config.hidden_size, "cuda") if (not args.use_klt) else klt_R_res(model)
+        # Distributed ownership: assign layers to ranks to reduce peak memory
+        world_size = dist.get_world_size() if (dist.is_available() and dist.is_initialized()) else 1
+        rank = dist.get_rank() if (dist.is_available() and dist.is_initialized()) else 0
+        
+        # Get device of first layer for R_res placement
+        first_layer_device = next(model.model.layers[0].parameters()).device
+
+        # Generate global R_res only on rank 0, others start with identity then broadcast
+        if rank == 0:
+            R_res_value = random_hadamard_matrix(model.config.hidden_size, first_layer_device) if (not args.use_klt) else klt_R_res(model)
+        else:
+            R_res_value = torch.eye(model.config.hidden_size, dtype=torch.float32, device=first_layer_device)
         R_res_module = rotation_utils.RotateModule(R_res_value)
         model.R_res = R_res_module
 
@@ -133,31 +146,35 @@ class LM:
                 
         for idx,layer in enumerate(tqdm.tqdm(layers,unit="layer",desc="Generate Rotating Parameters")):
             layer:nn.Module
+            memory_utils.distributed_memory_snapshot(f"rotate_layer_{idx}_start", getattr(args, 'output_dir', None))
+            
+            # Get device of current layer
+            layer_device = next(layer.parameters()).device
             
             R_S_modules = {}
             if args.smooth_up_down:
-                S_up_down = torch.ones(layer.mlp.up_proj.weight.shape[0])
+                S_up_down = torch.ones(layer.mlp.up_proj.weight.shape[0], device=layer_device)
                 S_up_down_module = smooth_utils.SmoothModule(S_up_down)
                 R_S_modules["S_up_down"] = S_up_down_module
             else:
                 R_S_modules["S_up_down"] = None
                 
             if args.smooth_up_gate:                
-                S_up_gate = torch.ones(layer.mlp.gate_proj.weight.shape[0])
+                S_up_gate = torch.ones(layer.mlp.gate_proj.weight.shape[0], device=layer_device)
                 S_up_gate_module = smooth_utils.SmoothModule(S_up_gate)
                 R_S_modules["S_up_gate"] = S_up_gate_module
             else:
                 R_S_modules["S_up_gate"] = None
                 
             if args.smooth_qk:
-                S_qk = torch.ones(layer.self_attn.k_proj.weight.shape[0])
+                S_qk = torch.ones(layer.self_attn.k_proj.weight.shape[0], device=layer_device)
                 S_qk_module = smooth_utils.SmoothModule(S_qk)
                 R_S_modules["S_qk"] = S_qk_module
             else:
                 R_S_modules["S_qk"] = None
                 
             if args.smooth_ov:
-                S_ov = torch.ones(layer.self_attn.v_proj.weight.shape[0])
+                S_ov = torch.ones(layer.self_attn.v_proj.weight.shape[0], device=layer_device)
                 S_ov_module = smooth_utils.SmoothModule(S_ov)
                 R_S_modules["S_ov"] = S_ov_module
             else:
@@ -213,20 +230,26 @@ class LM:
                 layer.self_attn.ropeq.use_hadamard_transform = True
 
             if args.rotate_post_rope:
-                post_rope_Q = random_hadamard_matrix(head_dim,"cuda").float()
+                post_rope_Q = random_hadamard_matrix(head_dim, layer_device).float()
                 layer.self_attn.post_rope_Q = rotation_utils.RotateModule(post_rope_Q)
 
             if args.rotate_pre_rope:
-                pre_rope_Q = random_hadamard_matrix(head_dim,"cuda").float()
+                pre_rope_Q = random_hadamard_matrix(head_dim, layer_device).float()
                 layer.self_attn.pre_rope_Q = rotation_utils.RotateModule(pre_rope_Q)
 
             
             if args.rotate_ov: 
-                if not args.use_klt:
-                    R_ov = [random_hadamard_matrix(head_dim, "cuda") for _ in range(num_heads)]
-                    R_ov_module = rotation_utils.RotateModule(None,*R_ov)
+                owner = idx % world_size
+                if owner == rank:
+                    if not args.use_klt:
+                        R_ov = [random_hadamard_matrix(head_dim, layer_device) for _ in range(num_heads)]
+                        R_ov_module = rotation_utils.RotateModule(None,*R_ov)
+                    else:
+                        R_ov = klt_ov(layer,head_dim,num_heads) # 4
+                        R_ov_module = rotation_utils.RotateModule(None,*R_ov)
                 else:
-                    R_ov = klt_ov(layer,head_dim,num_heads) # 4
+                    # Lightweight placeholder with identity until broadcast
+                    R_ov = [torch.eye(head_dim, dtype=torch.float32, device=layer_device) for _ in range(num_heads)]
                     R_ov_module = rotation_utils.RotateModule(None,*R_ov)
                 
                 R_S_modules["R_ov"] = R_ov_module
@@ -234,8 +257,8 @@ class LM:
                 R_S_modules["R_ov"] = None
 
             if args.smooth_norm_linear:
-                S_norm_qkv = nn.Parameter(torch.ones(layer.input_layernorm.weight.shape[-1],dtype=torch.float32,device="cuda"))
-                S_norm_upgate = nn.Parameter(torch.ones(layer.post_attention_layernorm.weight.shape[0],dtype=torch.float32,device="cuda"))
+                S_norm_qkv = nn.Parameter(torch.ones(layer.input_layernorm.weight.shape[-1],dtype=torch.float32,device=layer_device))
+                S_norm_upgate = nn.Parameter(torch.ones(layer.post_attention_layernorm.weight.shape[0],dtype=torch.float32,device=layer_device))
                 S_norm_qkv_module = smooth_utils.SmoothModule(S_norm_qkv)
                 S_norm_upgate_module = smooth_utils.SmoothModule(S_norm_upgate)
                 R_S_modules["S_norm_qkv"] = S_norm_qkv_module

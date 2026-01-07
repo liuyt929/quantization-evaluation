@@ -10,6 +10,8 @@
 
 import typing
 import torch
+from torch.distributed.tensor import Replicate, distribute_tensor
+from torch.distributed._tensor import DTensor
 
 
 def fuse_ln_linear(

@@ -1,0 +1,1571 @@
+Job started on Tue  6 Jan 20:27:55 UTC 2026
+Nodes: nid[010768-010769]
+In directory: /projects/u5hv/lionky.u5hv/work_home/quantization-evaluation
+MASTER_ADDR=nid010768
+MASTER_PORT=29600
+NNODES=2
+GPUS_PER_NODE=4
+Running: optimize.py with torchrun
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+W0106 20:28:14.209845 112493 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py:792] 
+W0106 20:28:14.209845 112493 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py:792] *****************************************
+W0106 20:28:14.209845 112493 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0106 20:28:14.209845 112493 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py:792] *****************************************
+W0106 20:28:14.511729 179547 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py:792] 
+W0106 20:28:14.511729 179547 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py:792] *****************************************
+W0106 20:28:14.511729 179547 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0106 20:28:14.511729 179547 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py:792] *****************************************
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/transformers/training_args.py:1525: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+[rank4]:[W106 20:28:29.678157780 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 4]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank0]:[W106 20:28:30.421933248 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+[rank7]:[W106 20:28:30.915748362 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 7]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+[rank5]:[W106 20:28:30.917759889 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 5]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank6]:[W106 20:28:30.917861614 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 6]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+nid010768:112507:112507 [0] NCCL INFO NCCL_GDRCOPY_ENABLE set by environment to 1.
+nid010768:112507:112507 [0] NCCL INFO GDRCOPY enabled library 2.4 driver 2.4
+nid010768:112507:112507 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^docker0,lo
+nid010768:112507:112507 [0] NCCL INFO Bootstrap : Using nmn0:10.100.27.189<0>
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+[rank3]:[W106 20:28:30.549474350 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+When using FSDP full shard, instead of using `gradient_checkpointing` in TrainingArguments, please use `activation_checkpointing` in `fsdp_config`. The former introduces a redundant AllGather operation in backward pass. Reference: https://github.com/huggingface/transformers/issues/30404
+[rank2]:[W106 20:28:30.553414855 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+[rank1]:[W106 20:28:30.553605922 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+nid010768:112507:112507 [0] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+nid010768:112507:112507 [0] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v7)
+nid010768:112507:112507 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid010768:112507:112507 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+nid010768:112507:112507 [0] NCCL INFO cudaDriverVersion 12070
+NCCL version 2.21.5+cuda12.6
+nid010768:112507:112507 [0] NCCL INFO Comm config Blocking set to 1
+nid010768:112510:112510 [3] NCCL INFO cudaDriverVersion 12070
+nid010768:112509:112509 [2] NCCL INFO cudaDriverVersion 12070
+nid010768:112509:112509 [2] NCCL INFO NCCL_GDRCOPY_ENABLE set by environment to 1.
+nid010768:112510:112510 [3] NCCL INFO NCCL_GDRCOPY_ENABLE set by environment to 1.
+nid010768:112510:112510 [3] NCCL INFO GDRCOPY enabled library 2.4 driver 2.4
+nid010768:112510:112510 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^docker0,lo
+nid010768:112509:112509 [2] NCCL INFO GDRCOPY enabled library 2.4 driver 2.4
+nid010768:112509:112509 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^docker0,lo
+nid010768:112508:112508 [1] NCCL INFO cudaDriverVersion 12070
+nid010768:112508:112508 [1] NCCL INFO NCCL_GDRCOPY_ENABLE set by environment to 1.
+nid010768:112508:112508 [1] NCCL INFO GDRCOPY enabled library 2.4 driver 2.4
+nid010768:112508:112508 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^docker0,lo
+nid010768:112509:112509 [2] NCCL INFO Bootstrap : Using nmn0:10.100.27.189<0>
+nid010768:112510:112510 [3] NCCL INFO Bootstrap : Using nmn0:10.100.27.189<0>
+nid010769:179561:179561 [0] NCCL INFO cudaDriverVersion 12070
+nid010769:179564:179564 [3] NCCL INFO cudaDriverVersion 12070
+nid010769:179561:179561 [0] NCCL INFO NCCL_GDRCOPY_ENABLE set by environment to 1.
+nid010769:179563:179563 [2] NCCL INFO cudaDriverVersion 12070
+nid010769:179562:179562 [1] NCCL INFO cudaDriverVersion 12070
+nid010768:112508:112508 [1] NCCL INFO Bootstrap : Using nmn0:10.100.27.189<0>
+nid010769:179564:179564 [3] NCCL INFO NCCL_GDRCOPY_ENABLE set by environment to 1.
+nid010769:179564:179564 [3] NCCL INFO GDRCOPY enabled library 2.4 driver 2.4
+nid010769:179561:179561 [0] NCCL INFO GDRCOPY enabled library 2.4 driver 2.4
+nid010769:179564:179564 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^docker0,lo
+nid010769:179561:179561 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^docker0,lo
+nid010769:179563:179563 [2] NCCL INFO NCCL_GDRCOPY_ENABLE set by environment to 1.
+nid010769:179562:179562 [1] NCCL INFO NCCL_GDRCOPY_ENABLE set by environment to 1.
+nid010769:179563:179563 [2] NCCL INFO GDRCOPY enabled library 2.4 driver 2.4
+nid010769:179563:179563 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^docker0,lo
+nid010769:179562:179562 [1] NCCL INFO GDRCOPY enabled library 2.4 driver 2.4
+nid010769:179562:179562 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to ^docker0,lo
+nid010769:179561:179561 [0] NCCL INFO Bootstrap : Using nmn0:10.100.25.243<0>
+nid010769:179564:179564 [3] NCCL INFO Bootstrap : Using nmn0:10.100.25.243<0>
+nid010769:179563:179563 [2] NCCL INFO Bootstrap : Using nmn0:10.100.25.243<0>
+nid010769:179562:179562 [1] NCCL INFO Bootstrap : Using nmn0:10.100.25.243<0>
+nid010768:112509:112509 [2] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+nid010768:112509:112509 [2] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v7)
+nid010768:112509:112509 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid010768:112509:112509 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+nid010768:112509:112509 [2] NCCL INFO Comm config Blocking set to 1
+nid010768:112510:112510 [3] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+nid010768:112510:112510 [3] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v7)
+nid010768:112510:112510 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid010768:112510:112510 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+nid010768:112510:112510 [3] NCCL INFO Comm config Blocking set to 1
+nid010768:112508:112508 [1] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+nid010768:112508:112508 [1] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v7)
+nid010768:112508:112508 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid010768:112508:112508 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+nid010768:112508:112508 [1] NCCL INFO Comm config Blocking set to 1
+nid010769:179563:179563 [2] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+nid010769:179563:179563 [2] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v7)
+nid010769:179563:179563 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid010769:179562:179562 [1] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+nid010769:179563:179563 [2] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+nid010769:179562:179562 [1] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v7)
+nid010769:179562:179562 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid010769:179562:179562 [1] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+nid010769:179563:179563 [2] NCCL INFO Comm config Blocking set to 1
+nid010769:179562:179562 [1] NCCL INFO Comm config Blocking set to 1
+nid010769:179561:179561 [0] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+nid010769:179561:179561 [0] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v7)
+nid010769:179561:179561 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid010769:179561:179561 [0] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+nid010769:179561:179561 [0] NCCL INFO Comm config Blocking set to 1
+nid010769:179564:179564 [3] NCCL INFO NET/Plugin: Failed to find ncclNetPlugin_v8 symbol.
+nid010769:179564:179564 [3] NCCL INFO NET/Plugin: Loaded net plugin AWS Libfabric (v7)
+nid010769:179564:179564 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin_v8 symbol.
+nid010769:179564:179564 [3] NCCL INFO NET/Plugin: Failed to find ncclCollNetPlugin symbol (>= v5). ncclCollNetPlugin symbols v4 and lower are not supported.
+nid010769:179564:179564 [3] NCCL INFO Comm config Blocking set to 1
+nid010768:112507:112568 [0] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010768:112507:112568 [0] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010768:112507:112568 [0] NCCL INFO NET/OFI Using Libfabric version 1.22
+nid010768:112510:112570 [3] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010768:112510:112570 [3] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010768:112510:112570 [3] NCCL INFO NET/OFI Using Libfabric version 1.22
+nid010768:112509:112569 [2] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010768:112509:112569 [2] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010768:112509:112569 [2] NCCL INFO NET/OFI Using Libfabric version 1.22
+nid010768:112508:112571 [1] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010768:112508:112571 [1] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010768:112508:112571 [1] NCCL INFO NET/OFI Using Libfabric version 1.22
+nid010768:112509:112569 [2] NCCL INFO NET/OFI Using CUDA driver version 12070
+nid010768:112507:112568 [0] NCCL INFO NET/OFI Using CUDA driver version 12070
+nid010768:112508:112571 [1] NCCL INFO NET/OFI Using CUDA driver version 12070
+nid010768:112510:112570 [3] NCCL INFO NET/OFI Using CUDA driver version 12070
+nid010768:112508:112571 [1] NCCL INFO NET/OFI Selected Provider is cxi (found 4 nics)
+nid010768:112508:112571 [1] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid010768:112507:112568 [0] NCCL INFO NET/OFI Selected Provider is cxi (found 4 nics)
+nid010768:112507:112568 [0] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid010768:112510:112570 [3] NCCL INFO NET/OFI Selected Provider is cxi (found 4 nics)
+nid010768:112510:112570 [3] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid010768:112509:112569 [2] NCCL INFO NET/OFI Selected Provider is cxi (found 4 nics)
+nid010768:112509:112569 [2] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid010768:112507:112568 [0] NCCL INFO Using non-device net plugin version 0
+nid010768:112507:112568 [0] NCCL INFO Using network AWS Libfabric
+nid010768:112508:112571 [1] NCCL INFO Using non-device net plugin version 0
+nid010768:112508:112571 [1] NCCL INFO Using network AWS Libfabric
+nid010768:112510:112570 [3] NCCL INFO Using non-device net plugin version 0
+nid010768:112510:112570 [3] NCCL INFO Using network AWS Libfabric
+nid010768:112509:112569 [2] NCCL INFO Using non-device net plugin version 0
+nid010768:112509:112569 [2] NCCL INFO Using network AWS Libfabric
+nid010769:179561:179628 [0] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010769:179561:179628 [0] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010769:179561:179628 [0] NCCL INFO NET/OFI Using Libfabric version 1.22
+nid010769:179563:179627 [2] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010769:179563:179627 [2] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010769:179563:179627 [2] NCCL INFO NET/OFI Using Libfabric version 1.22
+nid010769:179562:179626 [1] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010769:179562:179626 [1] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010769:179562:179626 [1] NCCL INFO NET/OFI Using Libfabric version 1.22
+nid010769:179564:179629 [3] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010769:179564:179629 [3] NCCL INFO NET/OFI Initializing aws-ofi-nccl 1.8.1-aws
+nid010769:179564:179629 [3] NCCL INFO NET/OFI Using Libfabric version 1.22
+nid010769:179561:179628 [0] NCCL INFO NET/OFI Using CUDA driver version 12070
+nid010769:179563:179627 [2] NCCL INFO NET/OFI Using CUDA driver version 12070
+nid010769:179564:179629 [3] NCCL INFO NET/OFI Using CUDA driver version 12070
+nid010769:179562:179626 [1] NCCL INFO NET/OFI Using CUDA driver version 12070
+nid010769:179563:179627 [2] NCCL INFO NET/OFI Selected Provider is cxi (found 4 nics)
+nid010769:179563:179627 [2] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid010769:179564:179629 [3] NCCL INFO NET/OFI Selected Provider is cxi (found 4 nics)
+nid010769:179564:179629 [3] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid010769:179562:179626 [1] NCCL INFO NET/OFI Selected Provider is cxi (found 4 nics)
+nid010769:179562:179626 [1] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid010769:179561:179628 [0] NCCL INFO NET/OFI Selected Provider is cxi (found 4 nics)
+nid010769:179561:179628 [0] NCCL INFO NET/OFI Using transport protocol SENDRECV
+nid010769:179561:179628 [0] NCCL INFO Using non-device net plugin version 0
+nid010769:179561:179628 [0] NCCL INFO Using network AWS Libfabric
+nid010769:179564:179629 [3] NCCL INFO Using non-device net plugin version 0
+nid010769:179564:179629 [3] NCCL INFO Using network AWS Libfabric
+nid010769:179562:179626 [1] NCCL INFO Using non-device net plugin version 0
+nid010769:179562:179626 [1] NCCL INFO Using network AWS Libfabric
+nid010769:179563:179627 [2] NCCL INFO Using non-device net plugin version 0
+nid010769:179563:179627 [2] NCCL INFO Using network AWS Libfabric
+nid010768:112507:112568 [0] NCCL INFO DMA-BUF is available on GPU device 0
+nid010768:112508:112571 [1] NCCL INFO DMA-BUF is available on GPU device 1
+nid010768:112510:112570 [3] NCCL INFO DMA-BUF is available on GPU device 3
+nid010768:112509:112569 [2] NCCL INFO DMA-BUF is available on GPU device 2
+nid010769:179561:179628 [0] NCCL INFO DMA-BUF is available on GPU device 0
+nid010769:179564:179629 [3] NCCL INFO DMA-BUF is available on GPU device 3
+nid010769:179563:179627 [2] NCCL INFO DMA-BUF is available on GPU device 2
+nid010769:179562:179626 [1] NCCL INFO DMA-BUF is available on GPU device 1
+nid010768:112509:112569 [2] NCCL INFO ncclCommInitRank comm 0xaaad25953110 rank 2 nranks 8 cudaDev 2 nvmlDev 2 busId 2901000 commId 0xd205ce47793913e8 - Init START
+nid010768:112510:112570 [3] NCCL INFO ncclCommInitRank comm 0xaaac8bde31c0 rank 3 nranks 8 cudaDev 3 nvmlDev 3 busId 3901000 commId 0xd205ce47793913e8 - Init START
+nid010768:112507:112568 [0] NCCL INFO ncclCommInitRank comm 0xaaaed6093070 rank 0 nranks 8 cudaDev 0 nvmlDev 0 busId 901000 commId 0xd205ce47793913e8 - Init START
+nid010768:112508:112571 [1] NCCL INFO ncclCommInitRank comm 0xaaaae9ae1500 rank 1 nranks 8 cudaDev 1 nvmlDev 1 busId 1901000 commId 0xd205ce47793913e8 - Init START
+nid010769:179562:179626 [1] NCCL INFO ncclCommInitRank comm 0xaaae7cbf2220 rank 5 nranks 8 cudaDev 1 nvmlDev 1 busId 1901000 commId 0xd205ce47793913e8 - Init START
+nid010769:179561:179628 [0] NCCL INFO ncclCommInitRank comm 0xaaad99651230 rank 4 nranks 8 cudaDev 0 nvmlDev 0 busId 901000 commId 0xd205ce47793913e8 - Init START
+nid010769:179564:179629 [3] NCCL INFO ncclCommInitRank comm 0xaaae041e2710 rank 7 nranks 8 cudaDev 3 nvmlDev 3 busId 3901000 commId 0xd205ce47793913e8 - Init START
+nid010769:179563:179627 [2] NCCL INFO ncclCommInitRank comm 0xaaac3f042370 rank 6 nranks 8 cudaDev 2 nvmlDev 2 busId 2901000 commId 0xd205ce47793913e8 - Init START
+nid010769:179562:179626 [1] NCCL INFO NCCL_P2P_LEVEL set by environment to SYS
+nid010769:179562:179626 [1] NCCL INFO NVLS multicast support is not available on dev 1
+nid010769:179562:179626 [1] NCCL INFO NCCL_CROSS_NIC set by environment to 0.
+nid010769:179561:179628 [0] NCCL INFO NCCL_P2P_LEVEL set by environment to SYS
+nid010769:179561:179628 [0] NCCL INFO Setting affinity for GPU 0 to 3f
+nid010769:179561:179628 [0] NCCL INFO NVLS multicast support is not available on dev 0
+nid010769:179561:179628 [0] NCCL INFO NCCL_CROSS_NIC set by environment to 0.
+nid010769:179563:179627 [2] NCCL INFO NCCL_P2P_LEVEL set by environment to SYS
+nid010769:179564:179629 [3] NCCL INFO NCCL_P2P_LEVEL set by environment to SYS
+nid010769:179563:179627 [2] NCCL INFO NVLS multicast support is not available on dev 2
+nid010769:179563:179627 [2] NCCL INFO NCCL_CROSS_NIC set by environment to 0.
+nid010769:179564:179629 [3] NCCL INFO NVLS multicast support is not available on dev 3
+nid010769:179564:179629 [3] NCCL INFO NCCL_CROSS_NIC set by environment to 0.
+nid010768:112508:112571 [1] NCCL INFO NCCL_P2P_LEVEL set by environment to SYS
+nid010768:112508:112571 [1] NCCL INFO NVLS multicast support is not available on dev 1
+nid010768:112508:112571 [1] NCCL INFO NCCL_CROSS_NIC set by environment to 0.
+nid010768:112507:112568 [0] NCCL INFO NCCL_P2P_LEVEL set by environment to SYS
+nid010768:112507:112568 [0] NCCL INFO Setting affinity for GPU 0 to 3f
+nid010768:112507:112568 [0] NCCL INFO NVLS multicast support is not available on dev 0
+nid010768:112507:112568 [0] NCCL INFO NCCL_CROSS_NIC set by environment to 0.
+nid010768:112509:112569 [2] NCCL INFO NCCL_P2P_LEVEL set by environment to SYS
+nid010768:112509:112569 [2] NCCL INFO NVLS multicast support is not available on dev 2
+nid010768:112509:112569 [2] NCCL INFO NCCL_CROSS_NIC set by environment to 0.
+nid010768:112510:112570 [3] NCCL INFO NCCL_P2P_LEVEL set by environment to SYS
+nid010768:112510:112570 [3] NCCL INFO NVLS multicast support is not available on dev 3
+nid010768:112510:112570 [3] NCCL INFO NCCL_CROSS_NIC set by environment to 0.
+nid010769:179563:179627 [2] NCCL INFO comm 0xaaac3f042370 rank 6 nRanks 8 nNodes 2 localRanks 4 localRank 2 MNNVL 0
+nid010769:179564:179629 [3] NCCL INFO comm 0xaaae041e2710 rank 7 nRanks 8 nNodes 2 localRanks 4 localRank 3 MNNVL 0
+nid010769:179562:179626 [1] NCCL INFO comm 0xaaae7cbf2220 rank 5 nRanks 8 nNodes 2 localRanks 4 localRank 1 MNNVL 0
+nid010769:179561:179628 [0] NCCL INFO comm 0xaaad99651230 rank 4 nRanks 8 nNodes 2 localRanks 4 localRank 0 MNNVL 0
+nid010769:179564:179629 [3] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+nid010769:179561:179628 [0] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+nid010769:179562:179626 [1] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+nid010769:179563:179627 [2] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+nid010769:179564:179629 [3] NCCL INFO Trees [0] -1/-1/-1->7->6 [1] 4/-1/-1->7->6 [2] 4/-1/-1->7->6 [3] 4/-1/-1->7->3 [4] -1/-1/-1->7->6 [5] 4/-1/-1->7->6 [6] 4/-1/-1->7->6 [7] 4/-1/-1->7->3 [8] -1/-1/-1->7->6 [9] 4/-1/-1->7->6 [10] 4/-1/-1->7->6 [11] 4/-1/-1->7->3 [12] -1/-1/-1->7->6 [13] 4/-1/-1->7->6 [14] 4/-1/-1->7->6 [15] 4/3/-1->7->-1 [16] -1/-1/-1->7->6 [17] 4/-1/-1->7->6 [18] 4/-1/-1->7->6 [19] 4/3/-1->7->-1 [20] -1/-1/-1->7->6 [21] 4/-1/-1->7->6 [22] 4/-1/-1->7->6 [23] 4/3/-1->7->-1
+nid010769:179561:179628 [0] NCCL INFO Trees [0] 5/-1/-1->4->0 [1] -1/-1/-1->4->7 [2] 5/-1/-1->4->7 [3] 5/-1/-1->4->7 [4] 5/-1/-1->4->0 [5] -1/-1/-1->4->7 [6] 5/-1/-1->4->7 [7] 5/-1/-1->4->7 [8] 5/-1/-1->4->0 [9] -1/-1/-1->4->7 [10] 5/-1/-1->4->7 [11] 5/-1/-1->4->7 [12] 5/0/-1->4->-1 [13] -1/-1/-1->4->7 [14] 5/-1/-1->4->7 [15] 5/-1/-1->4->7 [16] 5/0/-1->4->-1 [17] -1/-1/-1->4->7 [18] 5/-1/-1->4->7 [19] 5/-1/-1->4->7 [20] 5/0/-1->4->-1 [21] -1/-1/-1->4->7 [22] 5/-1/-1->4->7 [23] 5/-1/-1->4->7
+nid010768:112510:112570 [3] NCCL INFO comm 0xaaac8bde31c0 rank 3 nRanks 8 nNodes 2 localRanks 4 localRank 3 MNNVL 0
+nid010768:112509:112569 [2] NCCL INFO comm 0xaaad25953110 rank 2 nRanks 8 nNodes 2 localRanks 4 localRank 2 MNNVL 0
+nid010769:179562:179626 [1] NCCL INFO Trees [0] 6/-1/-1->5->4 [1] 6/-1/-1->5->1 [2] -1/-1/-1->5->4 [3] 6/-1/-1->5->4 [4] 6/-1/-1->5->4 [5] 6/-1/-1->5->1 [6] -1/-1/-1->5->4 [7] 6/-1/-1->5->4 [8] 6/-1/-1->5->4 [9] 6/-1/-1->5->1 [10] -1/-1/-1->5->4 [11] 6/-1/-1->5->4 [12] 6/-1/-1->5->4 [13] 6/1/-1->5->-1 [14] -1/-1/-1->5->4 [15] 6/-1/-1->5->4 [16] 6/-1/-1->5->4 [17] 6/1/-1->5->-1 [18] -1/-1/-1->5->4 [19] 6/-1/-1->5->4 [20] 6/-1/-1->5->4 [21] 6/1/-1->5->-1 [22] -1/-1/-1->5->4 [23] 6/-1/-1->5->4
+nid010769:179563:179627 [2] NCCL INFO Trees [0] 7/-1/-1->6->5 [1] 7/-1/-1->6->5 [2] 7/-1/-1->6->2 [3] -1/-1/-1->6->5 [4] 7/-1/-1->6->5 [5] 7/-1/-1->6->5 [6] 7/-1/-1->6->2 [7] -1/-1/-1->6->5 [8] 7/-1/-1->6->5 [9] 7/-1/-1->6->5 [10] 7/-1/-1->6->2 [11] -1/-1/-1->6->5 [12] 7/-1/-1->6->5 [13] 7/-1/-1->6->5 [14] 7/2/-1->6->-1 [15] -1/-1/-1->6->5 [16] 7/-1/-1->6->5 [17] 7/-1/-1->6->5 [18] 7/2/-1->6->-1 [19] -1/-1/-1->6->5 [20] 7/-1/-1->6->5 [21] 7/-1/-1->6->5 [22] 7/2/-1->6->-1 [23] -1/-1/-1->6->5
+nid010768:112510:112570 [3] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+nid010768:112509:112569 [2] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+nid010769:179564:179629 [3] NCCL INFO P2P Chunksize set to 131072
+nid010769:179561:179628 [0] NCCL INFO P2P Chunksize set to 131072
+nid010769:179562:179626 [1] NCCL INFO P2P Chunksize set to 131072
+nid010769:179563:179627 [2] NCCL INFO P2P Chunksize set to 131072
+nid010768:112510:112570 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] 0/-1/-1->3->2 [2] 0/-1/-1->3->2 [3] 0/7/-1->3->-1 [4] -1/-1/-1->3->2 [5] 0/-1/-1->3->2 [6] 0/-1/-1->3->2 [7] 0/7/-1->3->-1 [8] -1/-1/-1->3->2 [9] 0/-1/-1->3->2 [10] 0/-1/-1->3->2 [11] 0/7/-1->3->-1 [12] -1/-1/-1->3->2 [13] 0/-1/-1->3->2 [14] 0/-1/-1->3->2 [15] 0/-1/-1->3->7 [16] -1/-1/-1->3->2 [17] 0/-1/-1->3->2 [18] 0/-1/-1->3->2 [19] 0/-1/-1->3->7 [20] -1/-1/-1->3->2 [21] 0/-1/-1->3->2 [22] 0/-1/-1->3->2 [23] 0/-1/-1->3->7
+nid010768:112509:112569 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/6/-1->2->-1 [3] -1/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/6/-1->2->-1 [7] -1/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/6/-1->2->-1 [11] -1/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->6 [15] -1/-1/-1->2->1 [16] 3/-1/-1->2->1 [17] 3/-1/-1->2->1 [18] 3/-1/-1->2->6 [19] -1/-1/-1->2->1 [20] 3/-1/-1->2->1 [21] 3/-1/-1->2->1 [22] 3/-1/-1->2->6 [23] -1/-1/-1->2->1
+nid010768:112510:112570 [3] NCCL INFO P2P Chunksize set to 131072
+nid010768:112509:112569 [2] NCCL INFO P2P Chunksize set to 131072
+nid010768:112508:112571 [1] NCCL INFO comm 0xaaaae9ae1500 rank 1 nRanks 8 nNodes 2 localRanks 4 localRank 1 MNNVL 0
+nid010768:112507:112568 [0] NCCL INFO comm 0xaaaed6093070 rank 0 nRanks 8 nNodes 2 localRanks 4 localRank 0 MNNVL 0
+nid010768:112508:112571 [1] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+nid010768:112507:112568 [0] NCCL INFO NCCL_MIN_NCHANNELS set by environment to 4.
+nid010768:112507:112568 [0] NCCL INFO Channel 00/24 :    0   3   2   1   4   7   6   5
+nid010768:112507:112568 [0] NCCL INFO Channel 01/24 :    0   3   2   5   4   7   6   1
+nid010768:112507:112568 [0] NCCL INFO Channel 02/24 :    0   3   6   5   4   7   2   1
+nid010768:112507:112568 [0] NCCL INFO Channel 03/24 :    0   7   6   5   4   3   2   1
+nid010768:112508:112571 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/5/-1->1->-1 [2] -1/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/5/-1->1->-1 [6] -1/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/5/-1->1->-1 [10] -1/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->5 [14] -1/-1/-1->1->0 [15] 2/-1/-1->1->0 [16] 2/-1/-1->1->0 [17] 2/-1/-1->1->5 [18] -1/-1/-1->1->0 [19] 2/-1/-1->1->0 [20] 2/-1/-1->1->0 [21] 2/-1/-1->1->5 [22] -1/-1/-1->1->0 [23] 2/-1/-1->1->0
+nid010768:112507:112568 [0] NCCL INFO Channel 04/24 :    0   3   1   2   4   7   5   6
+nid010768:112507:112568 [0] NCCL INFO Channel 05/24 :    0   2   3   5   4   6   7   1
+nid010768:112508:112571 [1] NCCL INFO P2P Chunksize set to 131072
+nid010768:112507:112568 [0] NCCL INFO Channel 06/24 :    0   6   5   7   4   2   1   3
+nid010768:112507:112568 [0] NCCL INFO Channel 07/24 :    0   1   7   6   4   5   3   2
+nid010768:112507:112568 [0] NCCL INFO Channel 08/24 :    0   2   1   3   4   6   5   7
+nid010768:112507:112568 [0] NCCL INFO Channel 09/24 :    0   5   7   6   4   1   3   2
+nid010768:112507:112568 [0] NCCL INFO Channel 10/24 :    0   3   1   6   4   7   5   2
+nid010768:112507:112568 [0] NCCL INFO Channel 11/24 :    0   2   7   5   4   6   3   1
+nid010768:112507:112568 [0] NCCL INFO Channel 12/24 :    0   3   2   1   4   7   6   5
+nid010768:112507:112568 [0] NCCL INFO Channel 13/24 :    0   3   2   5   4   7   6   1
+nid010768:112507:112568 [0] NCCL INFO Channel 14/24 :    0   3   6   5   4   7   2   1
+nid010768:112507:112568 [0] NCCL INFO Channel 15/24 :    0   7   6   5   4   3   2   1
+nid010768:112507:112568 [0] NCCL INFO Channel 16/24 :    0   3   1   2   4   7   5   6
+nid010768:112507:112568 [0] NCCL INFO Channel 17/24 :    0   2   3   5   4   6   7   1
+nid010768:112507:112568 [0] NCCL INFO Channel 18/24 :    0   6   5   7   4   2   1   3
+nid010768:112507:112568 [0] NCCL INFO Channel 19/24 :    0   1   7   6   4   5   3   2
+nid010768:112507:112568 [0] NCCL INFO Channel 20/24 :    0   2   1   3   4   6   5   7
+nid010768:112507:112568 [0] NCCL INFO Channel 21/24 :    0   5   7   6   4   1   3   2
+nid010768:112507:112568 [0] NCCL INFO Channel 22/24 :    0   3   1   6   4   7   5   2
+nid010768:112507:112568 [0] NCCL INFO Channel 23/24 :    0   2   7   5   4   6   3   1
+nid010768:112507:112568 [0] NCCL INFO Trees [0] 1/4/-1->0->-1 [1] -1/-1/-1->0->3 [2] 1/-1/-1->0->3 [3] 1/-1/-1->0->3 [4] 1/4/-1->0->-1 [5] -1/-1/-1->0->3 [6] 1/-1/-1->0->3 [7] 1/-1/-1->0->3 [8] 1/4/-1->0->-1 [9] -1/-1/-1->0->3 [10] 1/-1/-1->0->3 [11] 1/-1/-1->0->3 [12] 1/-1/-1->0->4 [13] -1/-1/-1->0->3 [14] 1/-1/-1->0->3 [15] 1/-1/-1->0->3 [16] 1/-1/-1->0->4 [17] -1/-1/-1->0->3 [18] 1/-1/-1->0->3 [19] 1/-1/-1->0->3 [20] 1/-1/-1->0->4 [21] -1/-1/-1->0->3 [22] 1/-1/-1->0->3 [23] 1/-1/-1->0->3
+nid010768:112507:112568 [0] NCCL INFO P2P Chunksize set to 131072
+nid010768:112507:112568 [0] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid010768:112507:112568 [0] NCCL INFO NCCL_NET_FORCE_FLUSH set by environment to 1.
+nid010768:112507:112568 [0] NCCL INFO Channel 08/0 : 7[3] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 20/0 : 7[3] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 07/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 05/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 17/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 05/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 19/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 17/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid010769:179561:179628 [0] NCCL INFO NCCL_NET_FORCE_FLUSH set by environment to 1.
+nid010769:179561:179628 [0] NCCL INFO Channel 08/0 : 3[3] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 20/0 : 3[3] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 07/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 19/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 04/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 16/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid010768:112508:112571 [1] NCCL INFO NCCL_NET_FORCE_FLUSH set by environment to 1.
+nid010769:179564:179629 [3] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid010769:179564:179629 [3] NCCL INFO Channel 08/0 : 7[3] -> 0[0] [send] via NET/AWS Libfabric/0
+nid010769:179564:179629 [3] NCCL INFO Channel 20/0 : 7[3] -> 0[0] [send] via NET/AWS Libfabric/0
+nid010768:112508:112571 [1] NCCL INFO Channel 05/0 : 7[3] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 17/0 : 7[3] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 06/0 : 1[1] -> 3[3] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 08/0 : 1[1] -> 3[3] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 09/0 : 1[1] -> 3[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 04/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 16/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 04/0 : 6[2] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 18/0 : 1[1] -> 3[3] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid010768:112510:112570 [3] NCCL INFO Channel 08/0 : 3[3] -> 4[0] [send] via NET/AWS Libfabric/0
+nid010768:112510:112570 [3] NCCL INFO Channel 20/0 : 3[3] -> 4[0] [send] via NET/AWS Libfabric/0
+nid010768:112509:112569 [2] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid010768:112509:112569 [2] NCCL INFO Channel 04/0 : 2[2] -> 4[0] [send] via NET/AWS Libfabric/0
+nid010768:112509:112569 [2] NCCL INFO Channel 16/0 : 2[2] -> 4[0] [send] via NET/AWS Libfabric/0
+nid010769:179562:179626 [1] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid010769:179562:179626 [1] NCCL INFO NCCL_NET_FORCE_FLUSH set by environment to 1.
+nid010769:179562:179626 [1] NCCL INFO Channel 05/0 : 3[3] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 17/0 : 3[3] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 06/0 : 5[1] -> 7[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 08/0 : 5[1] -> 7[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 09/0 : 5[1] -> 7[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 18/0 : 5[1] -> 7[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 20/0 : 5[1] -> 7[3] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 20/0 : 1[1] -> 3[3] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 21/0 : 1[1] -> 3[3] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 05/0 : 3[3] -> 5[1] [send] via NET/AWS Libfabric/1
+nid010768:112510:112570 [3] NCCL INFO Channel 17/0 : 3[3] -> 5[1] [send] via NET/AWS Libfabric/1
+nid010768:112507:112568 [0] NCCL INFO Channel 16/0 : 6[2] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 05/0 : 0[0] -> 2[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 08/0 : 0[0] -> 2[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 11/0 : 0[0] -> 2[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 17/0 : 0[0] -> 2[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 20/0 : 0[0] -> 2[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 23/0 : 0[0] -> 2[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 05/0 : 7[3] -> 1[1] [send] via NET/AWS Libfabric/1
+nid010769:179563:179627 [2] NCCL INFO NCCL_NET_GDR_LEVEL set by environment to PHB
+nid010769:179563:179627 [2] NCCL INFO Channel 04/0 : 6[2] -> 0[0] [send] via NET/AWS Libfabric/0
+nid010769:179563:179627 [2] NCCL INFO Channel 16/0 : 6[2] -> 0[0] [send] via NET/AWS Libfabric/0
+nid010769:179561:179628 [0] NCCL INFO Channel 04/0 : 2[2] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 16/0 : 2[2] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 05/0 : 4[0] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 21/0 : 5[1] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 08/0 : 4[0] -> 6[2] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 11/0 : 4[0] -> 6[2] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 17/0 : 4[0] -> 6[2] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 20/0 : 4[0] -> 6[2] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 23/0 : 4[0] -> 6[2] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO NCCL_NET_FORCE_FLUSH set by environment to 1.
+nid010769:179561:179628 [0] NCCL INFO Channel 00/0 : 1[1] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO NCCL_NET_FORCE_FLUSH set by environment to 1.
+nid010769:179563:179627 [2] NCCL INFO Channel 02/0 : 3[3] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 14/0 : 3[3] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 02/0 : 7[3] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 17/0 : 7[3] -> 1[1] [send] via NET/AWS Libfabric/1
+nid010768:112508:112571 [1] NCCL INFO Channel 01/0 : 6[2] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 00/0 : 5[1] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 01/0 : 6[2] -> 1[1] [send] via NET/AWS Libfabric/1
+nid010768:112507:112568 [0] NCCL INFO Channel 12/0 : 5[1] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 00/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 14/0 : 7[3] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 01/0 : 2[2] -> 5[1] [send] via NET/AWS Libfabric/1
+nid010768:112509:112569 [2] NCCL INFO Channel 13/0 : 2[2] -> 5[1] [send] via NET/AWS Libfabric/1
+nid010768:112507:112568 [0] NCCL INFO Channel 01/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 02/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 12/0 : 1[1] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 00/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 13/0 : 6[2] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 00/0 : 1[1] -> 4[0] [send] via NET/AWS Libfabric/0
+nid010768:112508:112571 [1] NCCL INFO Channel 12/0 : 1[1] -> 4[0] [send] via NET/AWS Libfabric/0
+nid010769:179561:179628 [0] NCCL INFO Channel 01/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 02/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 04/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 01/0 : 2[2] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 13/0 : 2[2] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 00/0 : 5[1] -> 0[0] [send] via NET/AWS Libfabric/0
+nid010769:179562:179626 [1] NCCL INFO Channel 12/0 : 5[1] -> 0[0] [send] via NET/AWS Libfabric/0
+nid010769:179563:179627 [2] NCCL INFO Channel 13/0 : 6[2] -> 1[1] [send] via NET/AWS Libfabric/1
+nid010768:112507:112568 [0] NCCL INFO Channel 04/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 10/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 12/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 02/0 : 3[3] -> 6[2] [send] via NET/AWS Libfabric/2
+nid010768:112510:112570 [3] NCCL INFO Channel 14/0 : 3[3] -> 6[2] [send] via NET/AWS Libfabric/2
+nid010769:179563:179627 [2] NCCL INFO Channel 10/0 : 1[1] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 22/0 : 1[1] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 11/0 : 6[2] -> 3[3] [send] via NET/AWS Libfabric/3
+nid010769:179563:179627 [2] NCCL INFO Channel 23/0 : 6[2] -> 3[3] [send] via NET/AWS Libfabric/3
+nid010769:179561:179628 [0] NCCL INFO Channel 10/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 12/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 13/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 02/0 : 7[3] -> 2[2] [send] via NET/AWS Libfabric/2
+nid010769:179564:179629 [3] NCCL INFO Channel 14/0 : 7[3] -> 2[2] [send] via NET/AWS Libfabric/2
+nid010768:112507:112568 [0] NCCL INFO Channel 13/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 14/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 16/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 14/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 16/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 22/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO NCCL_NET_FORCE_FLUSH set by environment to 1.
+nid010768:112508:112571 [1] NCCL INFO Channel 09/0 : 4[0] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 21/0 : 4[0] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 10/0 : 1[1] -> 6[2] [send] via NET/AWS Libfabric/2
+nid010768:112508:112571 [1] NCCL INFO Channel 22/0 : 1[1] -> 6[2] [send] via NET/AWS Libfabric/2
+nid010769:179564:179629 [3] NCCL INFO Channel 11/0 : 2[2] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 23/0 : 2[2] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 06/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 18/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 22/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 09/0 : 0[0] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 21/0 : 0[0] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 10/0 : 5[1] -> 2[2] [send] via NET/AWS Libfabric/2
+nid010769:179562:179626 [1] NCCL INFO Channel 22/0 : 5[1] -> 2[2] [send] via NET/AWS Libfabric/2
+nid010768:112507:112568 [0] NCCL INFO Channel 09/0 : 0[0] -> 5[1] [send] via NET/AWS Libfabric/1
+nid010768:112507:112568 [0] NCCL INFO Channel 21/0 : 0[0] -> 5[1] [send] via NET/AWS Libfabric/1
+nid010768:112510:112570 [3] NCCL INFO NCCL_NET_FORCE_FLUSH set by environment to 1.
+nid010768:112510:112570 [3] NCCL INFO Channel 11/0 : 6[2] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 23/0 : 6[2] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 06/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 18/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 06/0 : 0[0] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 06/0 : 0[0] -> 6[2] [send] via NET/AWS Libfabric/2
+nid010768:112507:112568 [0] NCCL INFO Channel 18/0 : 0[0] -> 6[2] [send] via NET/AWS Libfabric/2
+nid010768:112509:112569 [2] NCCL INFO Channel 10/0 : 5[1] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 22/0 : 5[1] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 18/0 : 0[0] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 07/0 : 6[2] -> 4[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 09/0 : 6[2] -> 4[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 10/0 : 6[2] -> 4[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 19/0 : 6[2] -> 4[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 21/0 : 6[2] -> 4[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 22/0 : 6[2] -> 4[0] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 11/0 : 2[2] -> 7[3] [send] via NET/AWS Libfabric/3
+nid010768:112509:112569 [2] NCCL INFO Channel 23/0 : 2[2] -> 7[3] [send] via NET/AWS Libfabric/3
+nid010768:112509:112569 [2] NCCL INFO Channel 06/0 : 4[0] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 18/0 : 4[0] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 07/0 : 2[2] -> 0[0] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 09/0 : 2[2] -> 0[0] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 10/0 : 2[2] -> 0[0] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 19/0 : 2[2] -> 0[0] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 21/0 : 2[2] -> 0[0] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 22/0 : 2[2] -> 0[0] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 09/0 : 4[0] -> 1[1] [send] via NET/AWS Libfabric/1
+nid010769:179561:179628 [0] NCCL INFO Channel 21/0 : 4[0] -> 1[1] [send] via NET/AWS Libfabric/1
+nid010769:179564:179629 [3] NCCL INFO Channel 07/0 : 1[1] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 06/0 : 4[0] -> 2[2] [send] via NET/AWS Libfabric/2
+nid010769:179561:179628 [0] NCCL INFO Channel 18/0 : 4[0] -> 2[2] [send] via NET/AWS Libfabric/2
+nid010768:112508:112571 [1] NCCL INFO Channel 07/0 : 1[1] -> 7[3] [send] via NET/AWS Libfabric/3
+nid010768:112508:112571 [1] NCCL INFO Channel 19/0 : 1[1] -> 7[3] [send] via NET/AWS Libfabric/3
+nid010768:112509:112569 [2] NCCL INFO Channel 00/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 02/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 03/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 06/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 08/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 12/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 07/0 : 5[1] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 19/0 : 5[1] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 04/0 : 3[3] -> 1[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 10/0 : 3[3] -> 1[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 11/0 : 3[3] -> 1[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 16/0 : 3[3] -> 1[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 22/0 : 3[3] -> 1[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 23/0 : 3[3] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 14/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 15/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 18/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 20/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 03/0 : 4[0] -> 3[3] [send] via NET/AWS Libfabric/3
+nid010769:179561:179628 [0] NCCL INFO Channel 15/0 : 4[0] -> 3[3] [send] via NET/AWS Libfabric/3
+nid010768:112507:112568 [0] NCCL INFO Channel 03/0 : 0[0] -> 7[3] [send] via NET/AWS Libfabric/3
+nid010768:112507:112568 [0] NCCL INFO Channel 15/0 : 0[0] -> 7[3] [send] via NET/AWS Libfabric/3
+nid010769:179562:179626 [1] NCCL INFO Channel 07/0 : 5[1] -> 3[3] [send] via NET/AWS Libfabric/3
+nid010769:179562:179626 [1] NCCL INFO Channel 19/0 : 5[1] -> 3[3] [send] via NET/AWS Libfabric/3
+nid010769:179564:179629 [3] NCCL INFO Channel 19/0 : 1[1] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 04/0 : 7[3] -> 5[1] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 10/0 : 7[3] -> 5[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 03/0 : 4[0] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 15/0 : 4[0] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 00/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 11/0 : 7[3] -> 5[1] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 16/0 : 7[3] -> 5[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 01/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 22/0 : 7[3] -> 5[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 03/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 23/0 : 7[3] -> 5[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 07/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 09/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 03/0 : 0[0] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 01/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 15/0 : 0[0] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 00/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 02/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 01/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 03/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 05/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 03/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 11/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 07/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 13/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 09/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 12/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 12/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 13/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 15/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 14/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 19/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 13/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 21/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 15/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 15/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 00/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 02/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 03/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 19/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 21/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 17/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 23/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 06/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 08/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 12/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 01/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 02/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 03/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 14/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 05/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 15/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 18/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 20/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 11/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 13/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 14/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 15/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 17/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 23/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Connected all rings
+nid010768:112509:112569 [2] NCCL INFO Connected all rings
+nid010768:112507:112568 [0] NCCL INFO Connected all rings
+nid010768:112507:112568 [0] NCCL INFO Channel 00/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Connected all rings
+nid010769:179563:179627 [2] NCCL INFO Connected all rings
+nid010768:112510:112570 [3] NCCL INFO Connected all rings
+nid010769:179562:179626 [1] NCCL INFO Connected all rings
+nid010768:112507:112568 [0] NCCL INFO Channel 02/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Connected all rings
+nid010769:179561:179628 [0] NCCL INFO Channel 00/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 00/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 01/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 02/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 04/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 06/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 08/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 09/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 10/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 12/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 13/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 14/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 16/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 18/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 20/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 21/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 22/0 : 2[2] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 03/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 02/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 04/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 06/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 08/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 10/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 03/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 00/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 01/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 03/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 05/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 07/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 08/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 04/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 00/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 01/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 11/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 12/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 14/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 15/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 16/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 18/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 20/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 22/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 23/0 : 0[0] -> 1[1] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 09/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 11/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 12/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 13/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 15/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 17/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 19/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 20/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 21/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 23/0 : 1[1] -> 2[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 03/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 05/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 01/0 : 5[1] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 05/0 : 5[1] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 09/0 : 5[1] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 13/0 : 5[1] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 17/0 : 5[1] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 21/0 : 5[1] -> 1[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 01/0 : 1[1] -> 5[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 05/0 : 1[1] -> 5[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 09/0 : 1[1] -> 5[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 13/0 : 1[1] -> 5[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 17/0 : 1[1] -> 5[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 06/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 03/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 06/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 05/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 07/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 07/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 08/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 09/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 11/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 12/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 13/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 15/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 17/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 19/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 20/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 21/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 23/0 : 5[1] -> 6[2] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 21/0 : 1[1] -> 5[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 09/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 08/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 02/0 : 6[2] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 06/0 : 6[2] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 10/0 : 6[2] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 10/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 11/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 12/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 14/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 15/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 16/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 18/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 20/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 22/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 23/0 : 4[0] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 03/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 05/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 06/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 07/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 09/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 11/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 15/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 17/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 18/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 19/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 21/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 14/0 : 6[2] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 18/0 : 6[2] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 11/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 22/0 : 6[2] -> 2[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 02/0 : 2[2] -> 6[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 06/0 : 2[2] -> 6[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 10/0 : 2[2] -> 6[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 14/0 : 2[2] -> 6[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 18/0 : 2[2] -> 6[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010768:112509:112569 [2] NCCL INFO Channel 22/0 : 2[2] -> 6[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 00/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 01/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 02/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 04/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 15/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 17/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 18/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 19/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 21/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 23/0 : 0[0] -> 3[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 06/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 08/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 23/0 : 4[0] -> 7[3] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 03/0 : 7[3] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 07/0 : 7[3] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 11/0 : 7[3] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 15/0 : 7[3] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 19/0 : 7[3] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 23/0 : 7[3] -> 3[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 03/0 : 3[3] -> 7[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 07/0 : 3[3] -> 7[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 11/0 : 3[3] -> 7[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 15/0 : 3[3] -> 7[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 19/0 : 3[3] -> 7[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010768:112510:112570 [3] NCCL INFO Channel 23/0 : 3[3] -> 7[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 09/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 10/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 00/0 : 4[0] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 12/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 13/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 14/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 04/0 : 4[0] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 16/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Channel 08/0 : 4[0] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 12/0 : 4[0] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 18/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 20/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 21/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 22/0 : 6[2] -> 7[3] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 01/0 : 1[1] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 05/0 : 1[1] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 09/0 : 1[1] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 13/0 : 1[1] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 17/0 : 1[1] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 16/0 : 4[0] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 20/0 : 4[0] -> 0[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 00/0 : 0[0] -> 4[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 04/0 : 0[0] -> 4[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 08/0 : 0[0] -> 4[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 12/0 : 0[0] -> 4[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 16/0 : 0[0] -> 4[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 21/0 : 1[1] -> 5[1] [receive] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 01/0 : 5[1] -> 1[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 05/0 : 5[1] -> 1[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 09/0 : 5[1] -> 1[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 13/0 : 5[1] -> 1[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 17/0 : 5[1] -> 1[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010768:112507:112568 [0] NCCL INFO Channel 20/0 : 0[0] -> 4[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 02/0 : 2[2] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 21/0 : 5[1] -> 1[1] [send] via NET/AWS Libfabric/1/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 00/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 03/0 : 3[3] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 07/0 : 3[3] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179562:179626 [1] NCCL INFO Channel 04/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 06/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 07/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 08/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 10/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 12/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 16/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 00/0 : 0[0] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 04/0 : 0[0] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 08/0 : 0[0] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 12/0 : 0[0] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 16/0 : 0[0] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 20/0 : 0[0] -> 4[0] [receive] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 06/0 : 2[2] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 10/0 : 2[2] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 14/0 : 2[2] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 18/0 : 2[2] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 22/0 : 2[2] -> 6[2] [receive] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 02/0 : 6[2] -> 2[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 06/0 : 6[2] -> 2[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 10/0 : 6[2] -> 2[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 14/0 : 6[2] -> 2[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 18/0 : 6[2] -> 2[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 22/0 : 6[2] -> 2[2] [send] via NET/AWS Libfabric/2/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 01/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 04/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 18/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 05/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 07/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 19/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 20/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010769:179562:179626 [1] NCCL INFO Channel 22/0 : 5[1] -> 4[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 00/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 11/0 : 3[3] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 15/0 : 3[3] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 19/0 : 3[3] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 23/0 : 3[3] -> 7[3] [receive] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 03/0 : 7[3] -> 3[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 07/0 : 7[3] -> 3[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 11/0 : 7[3] -> 3[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 15/0 : 7[3] -> 3[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 19/0 : 7[3] -> 3[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179563:179627 [2] NCCL INFO Channel 09/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 04/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 06/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 23/0 : 7[3] -> 3[3] [send] via NET/AWS Libfabric/3/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 01/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 02/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 03/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 05/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 07/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 09/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 10/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 11/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 11/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 01/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 13/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 16/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 02/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 03/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 13/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 14/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 00/0 : 4[0] -> 0[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 04/0 : 4[0] -> 0[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 08/0 : 4[0] -> 0[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010768:112508:112571 [1] NCCL INFO Channel 07/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 08/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 10/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 12/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 16/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 18/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 19/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 20/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010768:112508:112571 [1] NCCL INFO Channel 22/0 : 1[1] -> 0[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 15/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 17/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 01/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 04/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 05/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 07/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 09/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 11/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 13/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 16/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 17/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 19/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 21/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010768:112509:112569 [2] NCCL INFO Channel 23/0 : 2[2] -> 1[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 17/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 19/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 21/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179563:179627 [2] NCCL INFO Channel 23/0 : 6[2] -> 5[1] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 12/0 : 4[0] -> 0[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179561:179628 [0] NCCL INFO Channel 16/0 : 4[0] -> 0[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 19/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 21/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 22/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 23/0 : 7[3] -> 4[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 05/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 07/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010769:179561:179628 [0] NCCL INFO Channel 20/0 : 4[0] -> 0[0] [send] via NET/AWS Libfabric/0/GDRDMA
+nid010769:179564:179629 [3] NCCL INFO Channel 02/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 04/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 05/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 06/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 08/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 10/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 14/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 16/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 17/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 18/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 20/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010769:179564:179629 [3] NCCL INFO Channel 22/0 : 7[3] -> 6[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 09/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 10/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 11/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 13/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 14/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 15/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 17/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 19/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 21/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 22/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 23/0 : 3[3] -> 0[0] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 02/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 04/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 05/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 06/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 08/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 10/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 14/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 16/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 17/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 18/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 20/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112510:112570 [3] NCCL INFO Channel 22/0 : 3[3] -> 2[2] via P2P/CUMEM
+nid010768:112507:112568 [0] NCCL INFO Connected all trees
+nid010768:112507:112568 [0] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+nid010768:112507:112568 [0] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 2 p2p channels per peer
+nid010769:179561:179628 [0] NCCL INFO Connected all trees
+nid010769:179561:179628 [0] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+nid010769:179561:179628 [0] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 2 p2p channels per peer
+nid010768:112508:112571 [1] NCCL INFO Connected all trees
+nid010768:112508:112571 [1] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+nid010768:112508:112571 [1] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 2 p2p channels per peer
+nid010768:112510:112570 [3] NCCL INFO Connected all trees
+nid010768:112510:112570 [3] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+nid010768:112510:112570 [3] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 2 p2p channels per peer
+nid010768:112509:112569 [2] NCCL INFO Connected all trees
+nid010768:112509:112569 [2] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+nid010768:112509:112569 [2] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 2 p2p channels per peer
+nid010769:179562:179626 [1] NCCL INFO Connected all trees
+nid010769:179562:179626 [1] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+nid010769:179562:179626 [1] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 2 p2p channels per peer
+nid010769:179564:179629 [3] NCCL INFO Connected all trees
+nid010769:179563:179627 [2] NCCL INFO Connected all trees
+nid010769:179564:179629 [3] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+nid010769:179564:179629 [3] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 2 p2p channels per peer
+nid010769:179563:179627 [2] NCCL INFO threadThresholds 8/8/64 | 64/8/64 | 512 | 512
+nid010769:179563:179627 [2] NCCL INFO 24 coll channels, 24 collnet channels, 0 nvls channels, 32 p2p channels, 2 p2p channels per peer
+nid010769:179562:179626 [1] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2, using internal tuner instead.
+nid010769:179564:179629 [3] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2, using internal tuner instead.
+nid010769:179563:179627 [2] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2, using internal tuner instead.
+nid010769:179561:179628 [0] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2, using internal tuner instead.
+nid010769:179562:179626 [1] NCCL INFO ncclCommInitRank comm 0xaaae7cbf2220 rank 5 nranks 8 cudaDev 1 nvmlDev 1 busId 1901000 commId 0xd205ce47793913e8 - Init COMPLETE
+nid010769:179564:179629 [3] NCCL INFO ncclCommInitRank comm 0xaaae041e2710 rank 7 nranks 8 cudaDev 3 nvmlDev 3 busId 3901000 commId 0xd205ce47793913e8 - Init COMPLETE
+nid010769:179563:179627 [2] NCCL INFO ncclCommInitRank comm 0xaaac3f042370 rank 6 nranks 8 cudaDev 2 nvmlDev 2 busId 2901000 commId 0xd205ce47793913e8 - Init COMPLETE
+nid010769:179561:179628 [0] NCCL INFO ncclCommInitRank comm 0xaaad99651230 rank 4 nranks 8 cudaDev 0 nvmlDev 0 busId 901000 commId 0xd205ce47793913e8 - Init COMPLETE
+nid010768:112508:112571 [1] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2, using internal tuner instead.
+nid010768:112509:112569 [2] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2, using internal tuner instead.
+nid010768:112507:112568 [0] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2, using internal tuner instead.
+nid010768:112510:112570 [3] NCCL INFO TUNER/Plugin: Failed to find ncclTunerPlugin_v2, using internal tuner instead.
+nid010768:112508:112571 [1] NCCL INFO ncclCommInitRank comm 0xaaaae9ae1500 rank 1 nranks 8 cudaDev 1 nvmlDev 1 busId 1901000 commId 0xd205ce47793913e8 - Init COMPLETE
+nid010768:112510:112570 [3] NCCL INFO ncclCommInitRank comm 0xaaac8bde31c0 rank 3 nranks 8 cudaDev 3 nvmlDev 3 busId 3901000 commId 0xd205ce47793913e8 - Init COMPLETE
+nid010768:112509:112569 [2] NCCL INFO ncclCommInitRank comm 0xaaad25953110 rank 2 nranks 8 cudaDev 2 nvmlDev 2 busId 2901000 commId 0xd205ce47793913e8 - Init COMPLETE
+nid010768:112507:112568 [0] NCCL INFO ncclCommInitRank comm 0xaaaed6093070 rank 0 nranks 8 cudaDev 0 nvmlDev 0 busId 901000 commId 0xd205ce47793913e8 - Init COMPLETE
+[Memory] phase=after_init ranks=8 max_gpu_usage=2.65% max_cpu_usage=13.80% bottleneck=unknown
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:268 - [Memory] phase=after_init ranks=8 max_gpu_usage=2.65% max_cpu_usage=13.80% bottleneck=unknown
+node=nid010768 rank=0 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=0 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=0 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=0 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=1 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+node=nid010768 rank=1 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+node=nid010768 rank=1 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+node=nid010768 rank=1 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+node=nid010768 rank=2 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.842 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010768 rank=2 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010768 rank=2 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010768 rank=2 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010768 rank=3 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=3 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=3 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=3 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010769 rank=4 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010769 rank=4 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010769 rank=4 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010769 rank=4 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010769 rank=5 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=5 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=5 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=5 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=6 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.91 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.91 GB
+node=nid010769 rank=6 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.91 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.91 GB
+node=nid010769 rank=6 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.91 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.91 GB
+node=nid010769 rank=6 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.91 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.91 GB
+node=nid010769 rank=7 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=7 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.843 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=7 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.844 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=7 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.844 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+我是进程 1，总进程数 8，当前设备: 1我是进程 3，总进程数 8，当前设备: 3我是进程 0，总进程数 8，当前设备: 0
+我是进程 2，总进程数 8，当前设备: 2
+
+
+我是进程 7，总进程数 8，当前设备: 3我是进程 6，总进程数 8，当前设备: 2我是进程 5，总进程数 8，当前设备: 1我是进程 4，总进程数 8，当前设备: 0
+
+
+
+2026-01-06 20:28:34,844 - evaluation - INFO - the rank is 0
+2026-01-06:20:28:34,844 INFO     [optimize.py:58] the rank is 0
+2026-01-06 20:28:34,844 - evaluation - INFO - the rank is 1
+2026-01-06 20:28:34,844 - evaluation - INFO - the rank is 3
+2026-01-06:20:28:34,844 INFO     [optimize.py:58] the rank is 1
+2026-01-06 20:28:34,844 - evaluation - INFO - the rank is 2
+2026-01-06:20:28:34,844 INFO     [optimize.py:58] the rank is 3
+2026-01-06:20:28:34,844 INFO     [optimize.py:58] the rank is 2
+2026-01-06 20:28:34,844 - evaluation - INFO - the rank is 1
+2026-01-06 20:28:34,844 - evaluation - INFO - the rank is 0
+2026-01-06 20:28:34,844 - evaluation - INFO - the rank is 3
+2026-01-06 20:28:34,844 - evaluation - INFO - the rank is 2
+2026-01-06:20:28:34,844 INFO     [optimize.py:58] the rank is 0
+2026-01-06:20:28:34,844 INFO     [optimize.py:58] the rank is 3
+2026-01-06:20:28:34,844 INFO     [optimize.py:58] the rank is 1
+2026-01-06:20:28:34,844 INFO     [optimize.py:58] the rank is 2
+[Memory] phase=before_LM_build ranks=8 max_gpu_usage=2.65% max_cpu_usage=13.80% bottleneck=unknown
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:268 - [Memory] phase=before_LM_build ranks=8 max_gpu_usage=2.65% max_cpu_usage=13.80% bottleneck=unknown
+node=nid010768 rank=0 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=0 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=0 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=0 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=1 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010768 rank=1 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010768 rank=1 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010768 rank=1 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010768 rank=2 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010768 rank=2 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010768 rank=2 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010768 rank=2 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010768 rank=3 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=3 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=3 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010768 rank=3 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010769 rank=4 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010769 rank=4 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010769 rank=4 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.855 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010769 rank=4 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.05 GB
+node=nid010769 rank=5 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010769 rank=5 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010769 rank=5 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010769 rank=5 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.02 GB
+node=nid010769 rank=6 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+node=nid010769 rank=6 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+node=nid010769 rank=6 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+node=nid010769 rank=6 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.95 GB
+node=nid010769 rank=7 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=0 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=7 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=1 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=7 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=2 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+node=nid010769 rank=7 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+2026-01-06 20:28:34.856 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=3 nvml used/total=2.53 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.98 GB
+Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:00<00:04,  6.19it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:00<00:06,  4.80it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:00<00:06,  4.66it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:00<00:06,  4.74it/s]Loading checkpoint shards:   7%|▋         | 2/30 [00:00<00:04,  6.85it/s]Loading checkpoint shards:   7%|▋         | 2/30 [00:00<00:04,  6.21it/s]Loading checkpoint shards:   7%|▋         | 2/30 [00:00<00:04,  6.23it/s]Loading checkpoint shards:   7%|▋         | 2/30 [00:00<00:04,  6.27it/s]Loading checkpoint shards:  10%|█         | 3/30 [00:00<00:03,  7.10it/s]Loading checkpoint shards:  10%|█         | 3/30 [00:00<00:03,  6.97it/s]Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/30 [00:00<?, ?it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:00<00:04,  6.93it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:00<00:07,  3.92it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:00<00:07,  3.84it/s]Loading checkpoint shards:   3%|▎         | 1/30 [00:00<00:07,  3.89it/s]Loading checkpoint shards:   7%|▋         | 2/30 [00:00<00:03,  7.60it/s]Loading checkpoint shards:   7%|▋         | 2/30 [00:00<00:05,  5.06it/s]Loading checkpoint shards:   7%|▋         | 2/30 [00:00<00:05,  5.01it/s]Loading checkpoint shards:   7%|▋         | 2/30 [00:00<00:05,  4.98it/s]Loading checkpoint shards:  10%|█         | 3/30 [00:00<00:04,  6.68it/s]Loading checkpoint shards:  10%|█         | 3/30 [00:00<00:04,  5.48it/s]Loading checkpoint shards:  10%|█         | 3/30 [00:00<00:03,  7.00it/s]Loading checkpoint shards:  10%|█         | 3/30 [00:00<00:03,  6.85it/s]Loading checkpoint shards:  13%|█▎        | 4/30 [00:00<00:03,  7.27it/s]Loading checkpoint shards:  13%|█▎        | 4/30 [00:00<00:03,  7.44it/s]Loading checkpoint shards:  13%|█▎        | 4/30 [00:00<00:03,  7.38it/s]Loading checkpoint shards:  13%|█▎        | 4/30 [00:00<00:03,  7.29it/s]Loading checkpoint shards:  17%|█▋        | 5/30 [00:00<00:03,  7.35it/s]Loading checkpoint shards:  17%|█▋        | 5/30 [00:00<00:03,  7.67it/s]Loading checkpoint shards:  17%|█▋        | 5/30 [00:00<00:03,  7.64it/s]Loading checkpoint shards:  17%|█▋        | 5/30 [00:00<00:03,  7.57it/s]Loading checkpoint shards:  20%|██        | 6/30 [00:00<00:03,  7.45it/s]Loading checkpoint shards:  20%|██        | 6/30 [00:00<00:03,  7.81it/s]Loading checkpoint shards:  20%|██        | 6/30 [00:00<00:03,  7.83it/s]Loading checkLoading checkpoint shards:  10%|█         | 3/30 [00:00<00:05,  5.37it/s]Loading checkpoint shards:  10%|█         | 3/30 [00:00<00:05,  5.31it/s]Loading checkpoint shards:  13%|█▎        | 4/30 [00:00<00:04,  6.28it/s]Loading checkpoint shards:  13%|█▎        | 4/30 [00:00<00:05,  4.44it/s]Loading checkpoint shards:  13%|█▎        | 4/30 [00:00<00:05,  4.40it/s]Loading checkpoint shards:  17%|█▋        | 5/30 [00:00<00:05,  4.85it/s]Loading checkpoint shards:  13%|█▎        | 4/30 [00:00<00:06,  4.20it/s]Loading checkpoint shards:  17%|█▋        | 5/30 [00:01<00:05,  4.59it/s]Loading checkpoint shards:  17%|█▋        | 5/30 [00:01<00:05,  4.57it/s]Loading checkpoint shards:  17%|█▋        | 5/30 [00:01<00:05,  4.65it/s]Loading checkpoint shards:  20%|██        | 6/30 [00:01<00:04,  5.04it/s]Loading checkpoint shards:  20%|██        | 6/30 [00:01<00:04,  5.38it/s]Loading checkpoint shards:  20%|██        | 6/30 [00:01<00:04,  5.39it/s]Loading checkpoint shards:  20%|██        | 6/30 [00:00<00:03,  7.71it/s]Loading checkpoint shards:  23%|██▎       | 7/30 [00:00<00:03,  7.54it/s]Loading checkpoint shards:  23%|██▎       | 7/30 [00:00<00:02,  7.82it/s]Loading checkpoint shards:  23%|██▎       | 7/30 [00:00<00:02,  7.80it/s]Loading checkpoint shards:  23%|██▎       | 7/30 [00:00<00:02,  7.84it/s]Loading checkpoint shards:  27%|██▋       | 8/30 [00:01<00:02,  7.62it/s]Loading checkpoint shards:  27%|██▋       | 8/30 [00:01<00:02,  7.97it/s]Loading checkpoint shards:  27%|██▋       | 8/30 [00:01<00:02,  7.83it/s]Loading checkpoint shards:  27%|██▋       | 8/30 [00:01<00:02,  7.84it/s]Loading checkpoint shards:  30%|███       | 9/30 [00:01<00:02,  7.67it/s]Loading checkpoint shards:  30%|███       | 9/30 [00:01<00:02,  7.83it/s]Loading checkpoint shards:  30%|███       | 9/30 [00:01<00:02,  7.83it/s]Loading checkpoint shards:  30%|███       | 9/30 [00:01<00:02,  7.88it/s]point shards:  20%|██        | 6/30 [00:01<00:04,  5.46it/s]Loading checkpoint shards:  23%|██▎       | 7/30 [00:01<00:04,  5.74it/s]Loading checkpoint shards:  23%|██▎       | 7/30 [00:01<00:03,  6.06it/s]Loading checkpoint shards:  23%|██▎       | 7/30 [00:01<00:03,  6.07it/s]Loading checkpoint shards:  23%|██▎       | 7/30 [00:01<00:03,  6.13it/s]Loading checkpoint shards:  27%|██▋       | 8/30 [00:01<00:03,  6.32it/s]Loading checkpoint shards:  27%|██▋       | 8/30 [00:01<00:03,  6.63it/s]Loading checkpoint shards:  27%|██▋       | 8/30 [00:01<00:03,  6.59it/s]Loading checkpoint shards:  27%|██▋       | 8/30 [00:01<00:03,  6.66it/s]Loading checkpoint shards:  30%|███       | 9/30 [00:01<00:03,  6.77it/s]Loading checkpoint shards:  30%|███       | 9/30 [00:01<00:02,  7.04it/s]Loading checkpoint shards:  30%|███       | 9/30 [00:01<00:03,  7.00it/s]Loading checkpoint shards:  30%|███       | 9/30 [00:01<00:02,  7.06it/s]Loading checkpoint shards:  33%|███▎      | 10/30 [00:01<00:02,  7.74it/s]Loading checkpoint shards:  33%|███▎      | 10/30 [00:01<00:02,  7.81it/s]Loading checkpoint shards:  33%|███▎      | 10/30 [00:01<00:02,  7.86it/s]Loading checkpoint shards:  33%|███▎      | 10/30 [00:01<00:02,  7.80it/s]Loading checkpoint shards:  37%|███▋      | 11/30 [00:01<00:02,  7.75it/s]Loading checkpoint shards:  37%|███▋      | 11/30 [00:01<00:02,  7.87it/s]Loading checkpoint shards:  37%|███▋      | 11/30 [00:01<00:02,  7.81it/s]Loading checkpoint shards:  37%|███▋      | 11/30 [00:01<00:02,  7.80it/s]Loading checkpoint shards:  40%|████      | 12/30 [00:01<00:02,  7.78it/s]Loading checkpoint shards:  40%|████      | 12/30 [00:01<00:02,  7.83it/s]Loading checkpoint shards:  40%|████      | 12/30 [00:01<00:02,  7.85it/s]Loading checkpoint shards:  40%|████      | 12/30 [00:01<00:02,  7.82it/s]Loading checkpoint shards: Loading checkpoint shards:  33%|███▎      | 10/30 [00:01<00:02,  7.10it/s]Loading checkpoint shards:  33%|███▎      | 10/30 [00:01<00:02,  7.35it/s]Loading checkpoint shards:  33%|███▎      | 10/30 [00:01<00:02,  7.31it/s]Loading checkpoint shards:  33%|███▎      | 10/30 [00:01<00:02,  7.36it/s]Loading checkpoint shards:  37%|███▋      | 11/30 [00:01<00:02,  7.34it/s]Loading checkpoint shards:  37%|███▋      | 11/30 [00:01<00:02,  7.57it/s]Loading checkpoint shards:  37%|███▋      | 11/30 [00:01<00:02,  7.54it/s]Loading checkpoint shards:  37%|███▋      | 11/30 [00:01<00:02,  7.58it/s]Loading checkpoint shards:  40%|████      | 12/30 [00:01<00:02,  7.51it/s]Loading checkpoint shards:  40%|████      | 12/30 [00:01<00:02,  7.72it/s]Loading checkpoint shards:  40%|████      | 12/30 [00:01<00:02,  7.70it/s]Loading checkpoint shards:  40%|████      | 12/30 [00:01<00:02,  7.73it/s]Loading checkpoint shards:  43%|████▎     | 13/30 [00:01<00:02,  7.80it/s]Loading checkpoint shards:  43%|████▎     | 13/30 [00:01<00:02,  7.84it/s]Loading checkpoint shards:  43%|████▎     | 13/30 [00:01<00:02,  7.84it/s]Loading checkpoint shards:  43%|████▎     | 13/30 [00:01<00:02,  7.81it/s]Loading checkpoint shards:  47%|████▋     | 14/30 [00:01<00:02,  7.83it/s]Loading checkpoint shards:  47%|████▋     | 14/30 [00:01<00:02,  7.86it/s]Loading checkpoint shards:  47%|████▋     | 14/30 [00:01<00:02,  7.84it/s]Loading checkpoint shards:  47%|████▋     | 14/30 [00:01<00:02,  7.85it/s]Loading checkpoint shards:  50%|█████     | 15/30 [00:01<00:01,  7.84it/s]Loading checkpoint shards:  50%|█████     | 15/30 [00:01<00:01,  7.87it/s]Loading checkpoint shards:  50%|█████     | 15/30 [00:01<00:01,  7.87it/s]Loading checkpoint shards:  50%|█████     | 15/30 [00:01<00:01,  7.84it/s]Loading checkpoint shards:  53% 43%|████▎     | 13/30 [00:01<00:02,  7.62it/s]Loading checkpoint shards:  43%|████▎     | 13/30 [00:02<00:02,  7.82it/s]Loading checkpoint shards:  43%|████▎     | 13/30 [00:02<00:02,  7.82it/s]Loading checkpoint shards:  43%|████▎     | 13/30 [00:02<00:02,  7.84it/s]Loading checkpoint shards:  47%|████▋     | 14/30 [00:02<00:02,  7.72it/s]Loading checkpoint shards:  47%|████▋     | 14/30 [00:02<00:02,  7.90it/s]Loading checkpoint shards:  47%|████▋     | 14/30 [00:02<00:02,  7.88it/s]Loading checkpoint shards:  47%|████▋     | 14/30 [00:02<00:02,  7.90it/s]Loading checkpoint shards:  50%|█████     | 15/30 [00:02<00:01,  7.75it/s]Loading checkpoint shards:  50%|█████     | 15/30 [00:02<00:01,  7.94it/s]Loading checkpoint shards:  50%|█████     | 15/30 [00:02<00:01,  7.93it/s]Loading checkpoint shards:  50%|█████     | 15/30 [00:02<00:01,  7.92it/s]Loading checkpoint shards:  53%|█████▎    | 16/30 [00:02<00:01,  7.82it/s]Loading checkpoint shards:  53%|█████▎    | 16/30 [00:02<00:01,  7.85it/s]Loading checkpoint shards:  53%|█████▎    | 16/30 [00:02<00:01,  7.86it/s]Loading checkpoint shards:  53%|█████▎    | 16/30 [00:02<00:01,  7.82it/s]Loading checkpoint shards:  57%|█████▋    | 17/30 [00:02<00:01,  7.81it/s]Loading checkpoint shards:  57%|█████▋    | 17/30 [00:02<00:01,  7.85it/s]Loading checkpoint shards:  57%|█████▋    | 17/30 [00:02<00:01,  7.85it/s]Loading checkpoint shards:  57%|█████▋    | 17/30 [00:02<00:01,  7.80it/s]Loading checkpoint shards:  60%|██████    | 18/30 [00:02<00:01,  7.79it/s]Loading checkpoint shards:  60%|██████    | 18/30 [00:02<00:01,  7.84it/s]Loading checkpoint shards:  60%|██████    | 18/30 [00:02<00:01,  7.83it/s]Loading checkpoint shards:  60%|██████    | 18/30 [00:02<00:01,  7.82it/s]Loading che|█████▎    | 16/30 [00:02<00:01,  7.78it/s]Loading checkpoint shards:  53%|█████▎    | 16/30 [00:02<00:01,  7.97it/s]Loading checkpoint shards:  53%|█████▎    | 16/30 [00:02<00:01,  7.96it/s]Loading checkpoint shards:  53%|█████▎    | 16/30 [00:02<00:01,  7.97it/s]Loading checkpoint shards:  57%|█████▋    | 17/30 [00:02<00:01,  7.81it/s]Loading checkpoint shards:  57%|█████▋    | 17/30 [00:02<00:01,  7.97it/s]Loading checkpoint shards:  57%|█████▋    | 17/30 [00:02<00:01,  7.98it/s]Loading checkpoint shards:  57%|█████▋    | 17/30 [00:02<00:01,  7.99it/s]Loading checkpoint shards:  60%|██████    | 18/30 [00:02<00:01,  7.84it/s]Loading checkpoint shards:  60%|██████    | 18/30 [00:02<00:01,  7.99it/s]Loading checkpoint shards:  60%|██████    | 18/30 [00:02<00:01,  7.98it/s]Loading checkpoint shards:  60%|██████    | 18/30 [00:02<00:01,  8.00it/s]Loading checkpoint shards:  63%|██████▎   | 19/30 [00:02<00:01,  7.83it/s]Loading checkpoint shards:  63%|██████▎   | 19/30 [00:02<00:01,  7.82it/s]Loading checkpoint shards:  63%|██████▎   | 19/30 [00:02<00:01,  7.83it/s]Loading checkpoint shards:  63%|██████▎   | 19/30 [00:02<00:01,  7.82it/s]Loading checkpoint shards:  67%|██████▋   | 20/30 [00:02<00:01,  7.84it/s]Loading checkpoint shards:  67%|██████▋   | 20/30 [00:02<00:01,  7.82it/s]Loading checkpoint shards:  67%|██████▋   | 20/30 [00:02<00:01,  7.82it/s]Loading checkpoint shards:  67%|██████▋   | 20/30 [00:02<00:01,  7.79it/s]Loading checkpoint shards:  70%|███████   | 21/30 [00:02<00:01,  7.83it/s]Loading checkpoint shards:  70%|███████   | 21/30 [00:02<00:01,  7.84it/s]Loading checkpoint shards:  70%|███████   | 21/30 [00:02<00:01,  7.83it/s]Loading checkpoint shards:  70%|███████   ckpoint shards:  63%|██████▎   | 19/30 [00:02<00:01,  7.87it/s]Loading checkpoint shards:  63%|██████▎   | 19/30 [00:02<00:01,  8.00it/s]Loading checkpoint shards:  63%|██████▎   | 19/30 [00:02<00:01,  7.98it/s]Loading checkpoint shards:  63%|██████▎   | 19/30 [00:02<00:01,  8.01it/s]Loading checkpoint shards:  67%|██████▋   | 20/30 [00:02<00:01,  7.82it/s]Loading checkpoint shards:  67%|██████▋   | 20/30 [00:02<00:01,  8.11it/s]Loading checkpoint shards:  67%|██████▋   | 20/30 [00:02<00:01,  8.10it/s]Loading checkpoint shards:  67%|██████▋   | 20/30 [00:02<00:01,  8.14it/s]Loading checkpoint shards:  70%|███████   | 21/30 [00:03<00:02,  3.95it/s]Loading checkpoint shards:  70%|███████   | 21/30 [00:03<00:02,  3.92it/s]Loading checkpoint shards:  70%|███████   | 21/30 [00:03<00:02,  3.92it/s]Loading checkpoint shards:  70%|███████   | 21/30 [00:02<00:01,  7.83it/s]Loading checkpoint shards:  73%|███████▎  | 22/30 [00:02<00:01,  7.83it/s]Loading checkpoint shards:  73%|███████▎  | 22/30 [00:02<00:01,  7.85it/s]Loading checkpoint shards:  73%|███████▎  | 22/30 [00:02<00:01,  7.83it/s]Loading checkpoint shards:  73%|███████▎  | 22/30 [00:02<00:01,  7.81it/s]Loading checkpoint shards:  77%|███████▋  | 23/30 [00:03<00:01,  3.63it/s]Loading checkpoint shards:  77%|███████▋  | 23/30 [00:03<00:01,  3.63it/s]Loading checkpoint shards:  77%|███████▋  | 23/30 [00:03<00:01,  3.63it/s]Loading checkpoint shards:  77%|███████▋  | 23/30 [00:03<00:01,  3.63it/s]Loading checkpoint shards:  80%|████████  | 24/30 [00:03<00:01,  4.33it/s]Loading checkpoint shards:  80%|████████  | 24/30 [00:03<00:01,  4.33it/s]Loading checkpoint shards:  80%|████████  | 24/30 [00:03<00:01,  | 21/30 [00:03<00:02,  3.56it/s]Loading checkpoint shards:  73%|███████▎  | 22/30 [00:03<00:01,  4.29it/s]Loading checkpoint shards:  73%|███████▎  | 22/30 [00:03<00:01,  4.62it/s]Loading checkpoint shards:  73%|███████▎  | 22/30 [00:03<00:01,  4.64it/s]Loading checkpoint shards:  73%|███████▎  | 22/30 [00:03<00:01,  4.62it/s]Loading checkpoint shards:  77%|███████▋  | 23/30 [00:03<00:01,  4.98it/s]Loading checkpoint shards:  77%|███████▋  | 23/30 [00:03<00:01,  5.30it/s]Loading checkpoint shards:  77%|███████▋  | 23/30 [00:03<00:01,  5.32it/s]Loading checkpoint shards:  77%|███████▋  | 23/30 [00:03<00:01,  5.29it/s]Loading checkpoint shards:  80%|████████  | 24/30 [00:03<00:01,  5.62it/s]Loading checkpoint shards:  80%|████████  | 24/30 [00:03<00:01,  5.91it/s]Loading checkpoint shards:  80%|████████  | 24/30 [00:03<00:01,  4.33it/s]Loading checkpoint shards:  80%|████████  | 24/30 [00:03<00:01,  4.33it/s]Loading checkpoint shards:  83%|████████▎ | 25/30 [00:03<00:01,  4.99it/s]Loading checkpoint shards:  83%|████████▎ | 25/30 [00:03<00:01,  5.00it/s]Loading checkpoint shards:  83%|████████▎ | 25/30 [00:03<00:01,  4.99it/s]Loading checkpoint shards:  83%|████████▎ | 25/30 [00:03<00:01,  5.00it/s]Loading checkpoint shards:  87%|████████▋ | 26/30 [00:03<00:00,  5.59it/s]Loading checkpoint shards:  87%|████████▋ | 26/30 [00:03<00:00,  5.59it/s]Loading checkpoint shards:  87%|████████▋ | 26/30 [00:03<00:00,  5.59it/s]Loading checkpoint shards:  87%|████████▋ | 26/30 [00:03<00:00,  5.58it/s]Loading checkpoint shards:  90%|█████████ | 27/30 [00:04<00:00,  6.10it/s]Loading checkpoint shards:  90%|█████████ | 27/30 [00:04<00:00,  6.15.90it/s]Loading checkpoint shards:  80%|████████  | 24/30 [00:03<00:01,  5.88it/s]Loading checkpoint shards:  83%|████████▎ | 25/30 [00:03<00:00,  6.17it/s]Loading checkpoint shards:  83%|████████▎ | 25/30 [00:03<00:00,  6.41it/s]Loading checkpoint shards:  83%|████████▎ | 25/30 [00:03<00:00,  6.38it/s]Loading checkpoint shards:  83%|████████▎ | 25/30 [00:03<00:00,  6.38it/s]Loading checkpoint shards:  87%|████████▋ | 26/30 [00:04<00:00,  6.63it/s]Loading checkpoint shards:  87%|████████▋ | 26/30 [00:04<00:00,  6.81it/s]Loading checkpoint shards:  87%|████████▋ | 26/30 [00:04<00:00,  6.80it/s]Loading checkpoint shards:  87%|████████▋ | 26/30 [00:04<00:00,  6.79it/s]Loading checkpoint shards:  90%|█████████ | 27/30 [00:04<00:00,  6.99it/s]Loading checkpoint shards:  90%|█████████ | 27/30 [00:04<00:00,  7.12it/s]Loading checkpoint shards:  90%|█████████ | 27/30 [00:04<00:00,  6.12it/s]Loading checkpoint shards:  90%|█████████ | 27/30 [00:04<00:00,  6.11it/s]Loading checkpoint shards:  93%|█████████▎| 28/30 [00:04<00:00,  6.51it/s]Loading checkpoint shards:  93%|█████████▎| 28/30 [00:04<00:00,  6.53it/s]Loading checkpoint shards:  93%|█████████▎| 28/30 [00:04<00:00,  6.53it/s]Loading checkpoint shards:  93%|█████████▎| 28/30 [00:04<00:00,  6.49it/s]Loading checkpoint shards:  97%|█████████▋| 29/30 [00:04<00:00,  6.86it/s]Loading checkpoint shards:  97%|█████████▋| 29/30 [00:04<00:00,  6.86it/s]Loading checkpoint shards:  97%|█████████▋| 29/30 [00:04<00:00,  6.86it/s]Loading checkpoint shards:  97%|█████████▋| 29/30 [00:04<00:00,  6.86it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  7.23it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  6.84it/s]
+Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  7.22it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  6.85it/s]
+Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  7.22it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  6.85it/s]
+Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  7.13it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  6.83it/s]
+4it/s]Loading checkpoint shards:  90%|█████████ | 27/30 [00:04<00:00,  7.13it/s]Loading checkpoint shards:  90%|█████████ | 27/30 [00:04<00:00,  7.13it/s]Loading checkpoint shards:  93%|█████████▎| 28/30 [00:04<00:00,  7.26it/s]Loading checkpoint shards:  93%|█████████▎| 28/30 [00:04<00:00,  7.38it/s]Loading checkpoint shards:  93%|█████████▎| 28/30 [00:04<00:00,  7.36it/s]Loading checkpoint shards:  93%|█████████▎| 28/30 [00:04<00:00,  7.35it/s]Loading checkpoint shards:  97%|█████████▋| 29/30 [00:04<00:00,  7.45it/s]Loading checkpoint shards:  97%|█████████▋| 29/30 [00:04<00:00,  7.56it/s]Loading checkpoint shards:  97%|█████████▋| 29/30 [00:04<00:00,  7.53it/s]Loading checkpoint shards:  97%|█████████▋| 29/30 [00:04<00:00,  7.51it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  7.79it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  7.77it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  6.51it/s]
+Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  6.51it/s]
+Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  7.75it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  6.50it/s]
+Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  7.61it/s]Loading checkpoint shards: 100%|██████████| 30/30 [00:04<00:00,  6.50it/s]
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'PreTrainedTokenizerFast'. 
+The class this function is called from is 'LlamaTokenizerFast'.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'PreTrainedTokenizerFast'. 
+The class this function is called from is 'LlamaTokenizerFast'.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'PreTrainedTokenizerFast'. 
+The class this function is called from is 'LlamaTokenizerFast'.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'PreTrainedTokenizerFast'. 
+The class this function is called from is 'LlamaTokenizerFast'.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'PreTrainedTokenizerFast'. 
+The class this function is called from is 'LlamaTokenizerFast'.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'PreTrainedTokenizerFast'. 
+The class this function is called from is 'LlamaTokenizerFast'.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'PreTrainedTokenizerFast'. 
+The class this function is called from is 'LlamaTokenizerFast'.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'PreTrainedTokenizerFast'. 
+The class this function is called from is 'LlamaTokenizerFast'.
+You are using the default legacy behaviour of the <class 'transformers.models.llama.tokenization_llama_fast.LlamaTokenizerFast'>. This is expected, and simply means that the `legacy` (previous) behavior will be used so nothing changes for you. If you want to use the new behaviour, set `legacy=False`. This should only be set if you understand what it means, and thoroughly read the reason why this was added as explained in https://github.com/huggingface/transformers/pull/24565 - if you loaded a llama tokenizer from a GGUF file you can ignore this message.
+FSDPLlamaModel(
+  (embed_tokens): QuantEmbedding(
+    128256, 8192
+    (act_quantizer): Quantizer()
+  )
+  (layers): ModuleList(
+    (0-79): 80 x FSDPQuantDecoderLayer(
+      (self_attn): QuantAttention(
+        (q_proj): QuantLinear(
+          in_features=8192, out_features=8192, bias=False
+          (weight_quantizer): Quantizer()
+          (act_quantizer): Quantizer()
+        )
+        (k_proj): QuantLinear(
+          in_features=8192, out_features=1024, bias=False
+          (weight_quantizer): Quantizer()
+          (act_quantizer): Quantizer()
+        )
+        (ropeq): QuantROPE(
+          (rope_quantizer): Quantizer()
+          (act_quantizer): Quantizer()
+        )
+        (ropek): QuantROPE(
+          (rope_quantizer): Quantizer()
+          (act_quantizer): Quantizer()
+        )
+        (v_proj): QuantLinear(
+          in_features=8192, out_features=1024, bias=False
+          (weight_quantizer): Quantizer()
+          (act_quantizer): Quantizer()
+        )
+        (o_proj): QuantLinear(
+          in_features=8192, out_features=8192, bias=False
+          (weight_quantizer): Quantizer()
+          (act_quantizer): Quantizer()
+        )
+        (qk_matmul): QuantMatmul(
+          (act_quantizer): Quantizer()
+        )
+        (pv_matmul): QuantMatmul(
+          (act_quantizer): Quantizer()
+        )
+        (softmax): QuantSoftmax(
+          (act_quantizer): Quantizer()
+        )
+        (rotary_emb): LlamaRotaryEmbedding()
+      )
+      (mlp): QuantMLP(
+        (gate_proj): QuantLinear(
+          in_features=8192, out_features=28672, bias=False
+          (weight_quantizer): Quantizer()
+          (act_quantizer): Quantizer()
+        )
+        (down_proj): QuantLinear(
+          in_features=28672, out_features=8192, bias=False
+          (weight_quantizer): Quantizer()
+          (act_quantizer): Quantizer()
+        )
+        (up_proj): QuantLinear(
+          in_features=8192, out_features=28672, bias=False
+          (weight_quantizer): Quantizer()
+          (act_quantizer): Quantizer()
+        )
+        (silu): QuantSiLU(
+          (act_quantizer): Quantizer()
+        )
+        (mul): QuantMul(
+          (act_quantizer): Quantizer()
+        )
+      )
+      (input_layernorm): QuantRMSNorm(
+        (act_quantizer): Quantizer()
+      )
+      (post_attention_layernorm): QuantRMSNorm(
+        (act_quantizer): Quantizer()
+      )
+      (resadd1): QuantAdd(
+        (act_quantizer): Quantizer()
+      )
+      (resadd2): QuantAdd(
+        (act_quantizer): Quantizer()
+      )
+      (R_S_modules): ModuleDict()
+    )
+  )
+  (norm): QuantRMSNorm(
+    (act_quantizer): Quantizer()
+  )
+)
+[Memory] phase=after_LM_build ranks=8 max_gpu_usage=23.04% max_cpu_usage=25.62% bottleneck=unknown
+2026-01-06 20:29:05.409 | INFO     | utils.memory_utils:distributed_memory_snapshot:268 - [Memory] phase=after_LM_build ranks=8 max_gpu_usage=23.04% max_cpu_usage=25.62% bottleneck=unknown
+node=nid010768 rank=0 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=0.99 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=0.99 GB
+node=nid010768 rank=0 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.99 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.99 GB
+node=nid010768 rank=0 gpu=2 nvml used/total=22.03 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.99 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=2 nvml used/total=22.03 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.99 GB
+node=nid010768 rank=0 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.99 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=0 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=0.99 GB
+node=nid010768 rank=1 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.35 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.35 GB
+node=nid010768 rank=1 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.35 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.35 GB
+node=nid010768 rank=1 gpu=2 nvml used/total=22.03 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.35 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=2 nvml used/total=22.03 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.35 GB
+node=nid010768 rank=1 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.35 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=1 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.35 GB
+node=nid010768 rank=2 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.29 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.29 GB
+node=nid010768 rank=2 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.29 GB
+2026-01-06 20:29:05.410 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.29 GB
+node=nid010768 rank=2 gpu=2 nvml used/total=22.03 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.29 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=2 nvml used/total=22.03 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.29 GB
+node=nid010768 rank=2 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.29 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=2 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.29 GB
+node=nid010768 rank=3 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.53 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.53 GB
+node=nid010768 rank=3 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.53 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.53 GB
+node=nid010768 rank=3 gpu=2 nvml used/total=22.03 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.53 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=2 nvml used/total=22.03 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.53 GB
+node=nid010768 rank=3 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.53 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010768 rank=3 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.53 GB
+node=nid010769 rank=4 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=1.07 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=1.07 GB
+node=nid010769 rank=4 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.07 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.07 GB
+node=nid010769 rank=4 gpu=2 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.07 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=2 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.07 GB
+node=nid010769 rank=4 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.07 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=4 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=1.07 GB
+node=nid010769 rank=5 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.31 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.31 GB
+node=nid010769 rank=5 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.31 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.31 GB
+node=nid010769 rank=5 gpu=2 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.31 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=2 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.31 GB
+node=nid010769 rank=5 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.31 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=5 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.31 GB
+node=nid010769 rank=6 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.16 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.16 GB
+node=nid010769 rank=6 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.16 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.16 GB
+node=nid010769 rank=6 gpu=2 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.16 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=2 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.16 GB
+node=nid010769 rank=6 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.16 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=6 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.16 GB
+node=nid010769 rank=7 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.23 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=0 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.23 GB
+node=nid010769 rank=7 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.23 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=1 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.23 GB
+node=nid010769 rank=7 gpu=2 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.23 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=2 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=0.00 GB/0.00 GB/0.00 GB proc_rss=3.23 GB
+node=nid010769 rank=7 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.23 GB
+2026-01-06 20:29:05.411 | INFO     | utils.memory_utils:distributed_memory_snapshot:277 - node=nid010769 rank=7 gpu=3 nvml used/total=22.02 GB/95.58 GB torch alloc/resv/max=17.89 GB/19.49 GB/17.89 GB proc_rss=3.23 GB
+[rank4]: Traceback (most recent call last):
+[rank4]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 284, in <module>
+[rank4]:     train()
+[rank4]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 83, in train
+[rank4]:     fuse_norm_utils.fuse_layer_norms(lm.model)
+[rank4]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 82, in fuse_layer_norms
+[rank4]:     fuse_ln_linear(
+[rank4]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 40, in fuse_ln_linear
+[rank4]:     linear.weight.data = (W_ * layernorm.weight.double().to(W_.device)).to(linear_dtype)
+[rank4]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_compile.py", line 32, in inner
+[rank4]:     return disable_fn(*args, **kwargs)
+[rank4]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank4]:     return fn(*args, **kwargs)
+[rank4]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_api.py", line 346, in __torch_dispatch__
+[rank4]:     return DTensor._op_dispatcher.dispatch(
+[rank4]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 167, in dispatch
+[rank4]:     op_info = self.unwrap_to_op_info(op_call, args, kwargs)
+[rank4]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 372, in unwrap_to_op_info
+[rank4]:     self._try_replicate_spec_for_scalar_tensor(op_call, arg, mesh)
+[rank4]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 473, in _try_replicate_spec_for_scalar_tensor
+[rank4]:     raise RuntimeError(
+[rank4]: RuntimeError: aten.mul.Tensor: got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+[rank6]: Traceback (most recent call last):
+[rank6]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 284, in <module>
+[rank6]:     train()
+[rank6]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 83, in train
+[rank6]:     fuse_norm_utils.fuse_layer_norms(lm.model)
+[rank6]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 82, in fuse_layer_norms
+[rank6]:     fuse_ln_linear(
+[rank6]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 40, in fuse_ln_linear
+[rank6]:     linear.weight.data = (W_ * layernorm.weight.double().to(W_.device)).to(linear_dtype)
+[rank6]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_compile.py", line 32, in inner
+[rank6]:     return disable_fn(*args, **kwargs)
+[rank6]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank6]:     return fn(*args, **kwargs)
+[rank6]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_api.py", line 346, in __torch_dispatch__
+[rank6]:     return DTensor._op_dispatcher.dispatch(
+[rank6]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 167, in dispatch
+[rank6]:     op_info = self.unwrap_to_op_info(op_call, args, kwargs)
+[rank6]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 372, in unwrap_to_op_info
+[rank6]:     self._try_replicate_spec_for_scalar_tensor(op_call, arg, mesh)
+[rank6]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 473, in _try_replicate_spec_for_scalar_tensor
+[rank6]:     raise RuntimeError(
+[rank6]: RuntimeError: aten.mul.Tensor: got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+[rank7]: Traceback (most recent call last):
+[rank7]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 284, in <module>
+[rank7]:     train()
+[rank7]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 83, in train
+[rank7]:     fuse_norm_utils.fuse_layer_norms(lm.model)
+[rank7]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 82, in fuse_layer_norms
+[rank7]:     fuse_ln_linear(
+[rank7]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 40, in fuse_ln_linear
+[rank7]:     linear.weight.data = (W_ * layernorm.weight.double().to(W_.device)).to(linear_dtype)
+[rank7]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_compile.py", line 32, in inner
+[rank7]:     return disable_fn(*args, **kwargs)
+[rank7]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank7]:     return fn(*args, **kwargs)
+[rank7]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_api.py", line 346, in __torch_dispatch__
+[rank7]:     return DTensor._op_dispatcher.dispatch(
+[rank7]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 167, in dispatch
+[rank7]:     op_info = self.unwrap_to_op_info(op_call, args, kwargs)
+[rank7]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 372, in unwrap_to_op_info
+[rank7]:     self._try_replicate_spec_for_scalar_tensor(op_call, arg, mesh)
+[rank7]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 473, in _try_replicate_spec_for_scalar_tensor
+[rank7]:     raise RuntimeError(
+[rank7]: RuntimeError: aten.mul.Tensor: got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+[rank5]: Traceback (most recent call last):
+[rank5]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 284, in <module>
+[rank5]:     train()
+[rank5]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 83, in train
+[rank5]:     fuse_norm_utils.fuse_layer_norms(lm.model)
+[rank5]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 82, in fuse_layer_norms
+[rank5]:     fuse_ln_linear(
+[rank5]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 40, in fuse_ln_linear
+[rank5]:     linear.weight.data = (W_ * layernorm.weight.double().to(W_.device)).to(linear_dtype)
+[rank5]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_compile.py", line 32, in inner
+[rank5]:     return disable_fn(*args, **kwargs)
+[rank5]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank5]:     return fn(*args, **kwargs)
+[rank5]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_api.py", line 346, in __torch_dispatch__
+[rank5]:     return DTensor._op_dispatcher.dispatch(
+[rank5]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 167, in dispatch
+[rank5]:     op_info = self.unwrap_to_op_info(op_call, args, kwargs)
+[rank5]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 372, in unwrap_to_op_info
+[rank5]:     self._try_replicate_spec_for_scalar_tensor(op_call, arg, mesh)
+[rank5]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 473, in _try_replicate_spec_for_scalar_tensor
+[rank5]:     raise RuntimeError(
+[rank5]: RuntimeError: aten.mul.Tensor: got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 284, in <module>
+[rank0]:     train()
+[rank0]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 83, in train
+[rank0]:     fuse_norm_utils.fuse_layer_norms(lm.model)
+[rank0]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 82, in fuse_layer_norms
+[rank0]:     fuse_ln_linear(
+[rank0]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 40, in fuse_ln_linear
+[rank0]:     linear.weight.data = (W_ * layernorm.weight.double().to(W_.device)).to(linear_dtype)
+[rank0]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_compile.py", line 32, in inner
+[rank0]:     return disable_fn(*args, **kwargs)
+[rank0]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_api.py", line 346, in __torch_dispatch__
+[rank0]:     return DTensor._op_dispatcher.dispatch(
+[rank0]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 167, in dispatch
+[rank0]:     op_info = self.unwrap_to_op_info(op_call, args, kwargs)
+[rank0]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 372, in unwrap_to_op_info
+[rank0]:     self._try_replicate_spec_for_scalar_tensor(op_call, arg, mesh)
+[rank0]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 473, in _try_replicate_spec_for_scalar_tensor
+[rank0]:     raise RuntimeError(
+[rank0]: RuntimeError: aten.mul.Tensor: got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+[rank4]:[W106 20:29:06.638475840 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+nid010769:179563:179634 [2] NCCL INFO [Service thread] Connection closed by localRank 2
+nid010769:179564:179640 [3] NCCL INFO [Service thread] Connection closed by localRank 3
+nid010769:179561:179636 [0] NCCL INFO [Service thread] Connection closed by localRank 0
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 284, in <module>
+[rank2]:     train()
+[rank2]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 83, in train
+[rank2]:     fuse_norm_utils.fuse_layer_norms(lm.model)
+[rank2]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 82, in fuse_layer_norms
+[rank2]:     fuse_ln_linear(
+[rank2]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 40, in fuse_ln_linear
+[rank2]:     linear.weight.data = (W_ * layernorm.weight.double().to(W_.device)).to(linear_dtype)
+[rank2]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_compile.py", line 32, in inner
+[rank2]:     return disable_fn(*args, **kwargs)
+[rank2]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank2]:     return fn(*args, **kwargs)
+[rank2]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_api.py", line 346, in __torch_dispatch__
+[rank2]:     return DTensor._op_dispatcher.dispatch(
+[rank2]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 167, in dispatch
+[rank2]:     op_info = self.unwrap_to_op_info(op_call, args, kwargs)
+[rank2]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 372, in unwrap_to_op_info
+[rank2]:     self._try_replicate_spec_for_scalar_tensor(op_call, arg, mesh)
+[rank2]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 473, in _try_replicate_spec_for_scalar_tensor
+[rank2]:     raise RuntimeError(
+[rank2]: RuntimeError: aten.mul.Tensor: got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 284, in <module>
+[rank1]:     train()
+[rank1]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 83, in train
+[rank1]:     fuse_norm_utils.fuse_layer_norms(lm.model)
+[rank1]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 82, in fuse_layer_norms
+[rank1]:     fuse_ln_linear(
+[rank1]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 40, in fuse_ln_linear
+[rank1]:     linear.weight.data = (W_ * layernorm.weight.double().to(W_.device)).to(linear_dtype)
+[rank1]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_compile.py", line 32, in inner
+[rank1]:     return disable_fn(*args, **kwargs)
+[rank1]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank1]:     return fn(*args, **kwargs)
+[rank1]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_api.py", line 346, in __torch_dispatch__
+[rank1]:     return DTensor._op_dispatcher.dispatch(
+[rank1]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 167, in dispatch
+[rank1]:     op_info = self.unwrap_to_op_info(op_call, args, kwargs)
+[rank1]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 372, in unwrap_to_op_info
+[rank1]:     self._try_replicate_spec_for_scalar_tensor(op_call, arg, mesh)
+[rank1]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 473, in _try_replicate_spec_for_scalar_tensor
+[rank1]:     raise RuntimeError(
+[rank1]: RuntimeError: aten.mul.Tensor: got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 284, in <module>
+[rank3]:     train()
+[rank3]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/optimize.py", line 83, in train
+[rank3]:     fuse_norm_utils.fuse_layer_norms(lm.model)
+[rank3]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 82, in fuse_layer_norms
+[rank3]:     fuse_ln_linear(
+[rank3]:   File "/lus/lfs1aip2/projects/u5hv/lionky.u5hv/work_home/quantization-evaluation/utils/fuse_norm_utils.py", line 40, in fuse_ln_linear
+[rank3]:     linear.weight.data = (W_ * layernorm.weight.double().to(W_.device)).to(linear_dtype)
+[rank3]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_compile.py", line 32, in inner
+[rank3]:     return disable_fn(*args, **kwargs)
+[rank3]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/_dynamo/eval_frame.py", line 745, in _fn
+[rank3]:     return fn(*args, **kwargs)
+[rank3]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_api.py", line 346, in __torch_dispatch__
+[rank3]:     return DTensor._op_dispatcher.dispatch(
+[rank3]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 167, in dispatch
+[rank3]:     op_info = self.unwrap_to_op_info(op_call, args, kwargs)
+[rank3]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 372, in unwrap_to_op_info
+[rank3]:     self._try_replicate_spec_for_scalar_tensor(op_call, arg, mesh)
+[rank3]:   File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/tensor/_dispatch.py", line 473, in _try_replicate_spec_for_scalar_tensor
+[rank3]:     raise RuntimeError(
+[rank3]: RuntimeError: aten.mul.Tensor: got mixed torch.Tensor and DTensor, need to convert all torch.Tensor to DTensor before calling distributed operators!
+nid010769:179562:179638 [1] NCCL INFO [Service thread] Connection closed by localRank 1
+[rank0]:[W106 20:29:07.629510232 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+nid010768:112507:112577 [0] NCCL INFO [Service thread] Connection closed by localRank 0
+nid010768:112508:112584 [1] NCCL INFO [Service thread] Connection closed by localRank 1
+nid010768:112510:112582 [3] NCCL INFO [Service thread] Connection closed by localRank 3
+nid010768:112509:112580 [2] NCCL INFO [Service thread] Connection closed by localRank 2
+nid010769:179561:179666 [0] NCCL INFO comm 0xaaad99651230 rank 4 nranks 8 cudaDev 0 busId 901000 - Abort COMPLETE
+nid010769:179564:179667 [3] NCCL INFO comm 0xaaae041e2710 rank 7 nranks 8 cudaDev 3 busId 3901000 - Abort COMPLETE
+nid010769:179563:179665 [2] NCCL INFO comm 0xaaac3f042370 rank 6 nranks 8 cudaDev 2 busId 2901000 - Abort COMPLETE
+nid010769:179562:179668 [1] NCCL INFO comm 0xaaae7cbf2220 rank 5 nranks 8 cudaDev 1 busId 1901000 - Abort COMPLETE
+nid010768:112509:112616 [2] NCCL INFO comm 0xaaad25953110 rank 2 nranks 8 cudaDev 2 busId 2901000 - Abort COMPLETE
+nid010768:112510:112619 [3] NCCL INFO comm 0xaaac8bde31c0 rank 3 nranks 8 cudaDev 3 busId 3901000 - Abort COMPLETE
+nid010768:112508:112618 [1] NCCL INFO comm 0xaaaae9ae1500 rank 1 nranks 8 cudaDev 1 busId 1901000 - Abort COMPLETE
+nid010768:112507:112617 [0] NCCL INFO comm 0xaaaed6093070 rank 0 nranks 8 cudaDev 0 busId 901000 - Abort COMPLETE
+W0106 20:29:08.422733 179547 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 179561 closing signal SIGTERM
+E0106 20:29:08.787364 179547 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 1 (pid: 179562) of binary: /projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/bin/python3.9
+Traceback (most recent call last):
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+optimize.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-01-06_20:29:08
+  host      : nid010769
+  rank      : 6 (local_rank: 2)
+  exitcode  : 1 (pid: 179563)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-01-06_20:29:08
+  host      : nid010769
+  rank      : 7 (local_rank: 3)
+  exitcode  : 1 (pid: 179564)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-01-06_20:29:08
+  host      : nid010769
+  rank      : 5 (local_rank: 1)
+  exitcode  : 1 (pid: 179562)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+W0106 20:29:08.831861 112493 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 112507 closing signal SIGTERM
+W0106 20:29:08.832815 112493 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 112509 closing signal SIGTERM
+W0106 20:29:08.833066 112493 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 112510 closing signal SIGTERM
+srun: error: nid010769: task 1: Exited with exit code 1
+srun: Terminating StepId=1842450.0
+slurmstepd: error: *** STEP 1842450.0 ON nid010768 CANCELLED AT 2026-01-06T20:29:08 ***
+W0106 20:29:08.960965 112493 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py:719] Received Signals.SIGTERM death signal, shutting down workers
+W0106 20:29:08.961694 112493 /lus/lfs1aip2/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 112510 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/launcher/api.py", line 260, in launch_agent
+    result = agent.run()
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/metrics/api.py", line 137, in wrapper
+    result = f(*args, **kwargs)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 711, in run
+    result = self._invoke_run(role)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/api.py", line 871, in _invoke_run
+    run_result = self._monitor_workers(self._worker_group)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/metrics/api.py", line 137, in wrapper
+    result = f(*args, **kwargs)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/agent/server/local_elastic_agent.py", line 394, in _monitor_workers
+    result = self._pcontext.wait(0)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 531, in wait
+    return self._poll()
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 861, in _poll
+    self.close()  # terminate all running procs
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 572, in close
+    self._close(death_sig=death_sig, timeout=timeout)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 909, in _close
+    handler.proc.wait(time_to_wait)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/subprocess.py", line 1189, in wait
+    return self._wait(timeout=timeout)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/subprocess.py", line 1927, in _wait
+    time.sleep(delay)
+  File "/projects/u5hv/lionky.u5hv/conda/conda_envs/quantization-eval/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 84, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 112493 got signal: 15
+srun: error: nid010768: task 0: Exited with exit code 1
