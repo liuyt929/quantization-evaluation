@@ -13,6 +13,7 @@ from utils.utils import DEV,rdtype,Rdtype
 from utils import quant_utils
 from geoopt.manifolds import EuclideanStiefel,Stiefel
 import torch.nn.functional as F
+from torch.distributed.fsdp import fully_shard
 def skip(*args,**kwargs):
     pass
      
@@ -59,7 +60,8 @@ def get_model(
         tokenizer = transformers.LlamaTokenizerFast.from_pretrained(model_name,use_fact=True,add_eos_token=False,add_bos_token=False,padding_side="right")
     if process_word_embeddings:
         with torch.no_grad():
-            model.lm_head.weight.copy_(model.model.embed_tokens.weight)
+            model.lm_head.to_empty(device="cuda")
+            model.lm_head.weight.data=model.model.embed_tokens.weight.data.clone()
     # model.lm_head.weight.to('cpu')    
     model.seqlen = 2048
     if "llama" in model_name.lower():
@@ -75,7 +77,6 @@ def get_model(
     model.model.norm = QuantRMSNorm(model.model.norm,dict(bits=32))
     model.lm_head = QuantLinear(model.lm_head,dict(bits=32), name="head") 
     utils.utils.cleanup_memory(False)
-    
     return model,tokenizer
 
 
@@ -106,13 +107,12 @@ class LM:
         model.lm_head.temporary = temporary
         for layer in model.model.layers:
             layer.set_temporary(temporary)
-
     @torch.no_grad()
     def generate_rotate_parameters(self,args=None,ptq_args=None):
         utils.utils.cleanup_memory(False)
         if args is None:
             args = self.args
-
+       
         model = self.model
         config = model.config
         if hasattr(config,"num_key_value_heads"):
@@ -243,9 +243,16 @@ class LM:
             
             layer.R_S_modules = nn.ModuleDict(R_S_modules)
             utils.utils.cleanup_memory(False)
+            for child in layer.children():
+                if isinstance(child, (nn.ModuleDict,rotation_utils.RotateModule, smooth_utils.SmoothModule)):
+                    pass
+                else:
+                    fully_shard(child)
+                
         
         self.set_temporary(True)  
-            
+        fully_shard(model.model.embed_tokens)    
+        fully_shard(model.lm_head)
         utils.utils.cleanup_memory(False)
 
     

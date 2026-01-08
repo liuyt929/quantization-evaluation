@@ -46,8 +46,8 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
     utils.utils.cleanup_memory()
     if args.train_distribute:
         distribute_model(lm.model)
-    print(f"REAL_NAME: {lm.model.model.layers[0].__class__.__name__}")
-    print(lm.model)
+
+    # args.fsdp = "full_shard"
     trainer = MyTrainer(
         model=lm.model,
         tokenizer=lm.tokenizer,
@@ -55,6 +55,12 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
         eval_dataset=eval_dataset,
         args=args,
     )  
+    def skip_prepare(*args, **kwargs):
+        if len(args) == 1: return args[0]
+        return args
+
+    trainer.accelerator.prepare = skip_prepare
+    trainer.model_wrapped = trainer.model
     import torch.distributed as dist    
     if dist.is_initialized() and dist.get_world_size() > 1:
         print(f"--- 正在同步 Rank 0 的旋转矩阵到所有显卡 ---")
@@ -70,28 +76,34 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
                     for param in m.parameters():
                         # 把 Rank 0 的初始值分发给所有人，保证“起跑线”绝对一致
                         dist.broadcast(param.data, src=0)
-        
+        print(lm.model.R_res.weight)
         # # 同步完成，大家一起出发
         dist.barrier()
         print(f"--- 同步完成，开始训练 ---")
-    # st = torch.load(f"{args.output_dir}/model.bin", map_location="cpu")
-    # model_state_dict = trainer.model.state_dict()
-    # model_state_dict.update(st)
-    # trainer.model.load_state_dict(model_state_dict, strict=False)
+    
+    
     trainer.train()
-    acc = trainer.accelerator
-    st = {k: v for k, v in (acc.get_state_dict(trainer.model)).items() if k in param_keys}
-    acc.wait_for_everyone()
-    if acc.is_main_process:
-        torch.save(st, f"{args.output_dir}/model.bin")
-    else:
-        print(f"sub process{acc.process_index} exit")
-        exit(0)
-    lm.model = acc.unwrap_model(trainer.model)
+    save_fsdp2_model(lm.model, f"{args.output_dir}/model.bin",param_keys)
     if args.train_distribute:
         remove_hook_from_module(lm.model)
     return lm
+from torch.distributed.tensor import DTensor, Replicate
+def save_fsdp2_model(model, save_path,param_keys):
+    # 只有 Rank 0 负责写入文件
+    state_dict = {}
+    
+    for name, param in model.named_parameters():
+        # 如果是 DTensor，需要将其还原（Redistribute 为 Replicate 模式）
+        if name in param_keys:
+            if isinstance(param, DTensor):
+                full_param = param.redistribute(param.device_mesh, [Replicate()]).to_local()
+                state_dict[name] = full_param.cpu() # 移到 CPU 释放显存
+            else:
+                state_dict[name] = param.cpu()
 
+    if torch.distributed.get_rank() == 0:
+        torch.save(state_dict, save_path)
+        print(f"模型已成功保存至: {save_path}")
 
 def get_train_eval_dataset(args, tokenizer,ptq_args,model_args):
     cache_dir = "./cache/" + model_args.input_model.split("/")[-1] + "_".join(["tokenized", args.train_dataset])

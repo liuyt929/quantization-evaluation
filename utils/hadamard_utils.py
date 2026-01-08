@@ -137,46 +137,105 @@ def matmul_hadU_cuda(X, hadK, K):
     return input.reshape(X.shape)
 
 
+def matmul_hadU_cuda_fsdp(X, hadK, K):
+    # 记录原始状态
+    is_dtensor = isinstance(X, DTensor)
+    orig_device = X.device
+    orig_dtype = X.dtype
+    
+    # 1. 如果是 DTensor，先安全地转换为普通本地 Tensor
+    if is_dtensor:
+        # redistribute 为 Replicate 会触发 All-gather，确保当前卡拿到完整数据
+        # 这是数学正确执行 Hadamard 变换的前提
+        X_local = X.redistribute(X.device_mesh, [Replicate()]).to_local()
+    else:
+        X_local = X
+
+    n = X_local.shape[-1]
+    
+    # 2. 执行核心计算（在普通 Tensor 上执行，避开 DTensor Dispatch 错误）
+    if K == 1:
+        # 确保 contiguous()，防止 CUDA 核函数访问非法地址
+        input_data = X_local.contiguous()
+        output = HadamardTransform.apply(input_data) / torch.sqrt(torch.tensor(n, device=orig_device, dtype=orig_dtype))
+    else:
+        # 分块逻辑
+        input_reshaped = X_local.reshape(-1, K, n // K).contiguous()
+        input_transformed = HadamardTransform.apply(input_reshaped) / torch.sqrt(torch.tensor(n, device=orig_device, dtype=orig_dtype))
+        
+        hadK = hadK.to(device=orig_device, dtype=orig_dtype)
+        output = torch.matmul(hadK, input_transformed)
+        output = output.reshape(X_local.shape)
+
+    # 3. 如果原本是 DTensor，将结果包装回去并恢复分片状态
+    if is_dtensor:
+        from torch.distributed.tensor import distribute_tensor
+        # 先包装为全量 DTensor
+        output_dt = distribute_tensor(output, X.device_mesh, [Replicate()])
+        # 再还原回原本的分片方式 (如 Shard(0))，这一步会触发 Reduce-Scatter 确保显存均衡
+        return output_dt.redistribute(X.device_mesh, X.placements)
+    
+    return output
+
 def matmul_hadUt_cuda(X, hadK, K):
     return matmul_hadU_cuda(X, hadK, K, transpose=True)
 
-
 def apply_exact_had_to_linear(module, had_dim=-1, output=False, R2=None):
+    from torch.distributed.tensor import DTensor, Replicate
     assert isinstance(module, torch.nn.Linear)
     in_features, out_features = module.in_features, module.out_features
 
+    # 检查 Hadamard 维度
     if had_dim != -1:
         assert is_pow2(had_dim), "Hadamard dimension must be a power of 2!"
 
-    W_ = module.weight.data
-    dtype = W_.dtype
-    dev = W_.device
-    init_shape = W_.shape
-    W_ = W_.float().cuda()
+    # --- 处理权重 ---
+    W_orig = module.weight.data
+    is_dtensor = isinstance(W_orig, DTensor)
+    if is_dtensor:
+        # 全量 gather 到本地 Tensor
+        W = W_orig.redistribute(W_orig.device_mesh, [Replicate()]).to_local()
+    else:
+        W = W_orig
 
+    dtype = W.dtype
+    dev = W.device
+
+    W = W.float().cuda()  # 做计算用 float CUDA
+
+    # --- Hadamard 变换 ---
     if had_dim == -1:
         if output:
             had_K, K = get_hadK(out_features)
-            W_ = matmul_hadU_cuda(W_.t(), had_K, K).t()
-        if not output:
+            W = matmul_hadU_cuda(W.t(), had_K, K).t()
+        else:
             had_K, K = get_hadK(in_features)
-            W_ = matmul_hadU_cuda(W_, had_K, K)
+            W = matmul_hadU_cuda(W, had_K, K)
     else:
         hadK = hadamard_matrix(had_dim, "cuda").to(torch.float64)
         if R2 is not None:
             hadK = R2.to(torch.float64)
+
         if output:
-            W_ = W_.t()
-            transposed_shape = W_.shape
-            temp = W_.reshape(-1, transposed_shape[-1] // had_dim, had_dim)
+            W = W.t()
+            transposed_shape = W.shape
+            temp = W.reshape(-1, transposed_shape[-1] // had_dim, had_dim)
             temp = temp.to(torch.float64) @ hadK
-            W_ = temp.reshape(transposed_shape).t()
+            W = temp.reshape(transposed_shape).t()
         else:
-            init_shape = W_.shape
-            temp = W_.reshape(-1, init_shape[-1] // had_dim, had_dim)
+            init_shape = W.shape
+            temp = W.reshape(-1, init_shape[-1] // had_dim, had_dim)
             temp = temp.to(torch.float64) @ hadK
-            W_ = temp.reshape(init_shape)
-    module.weight.data = W_.to(device=dev, dtype=dtype)
+            W = temp.reshape(init_shape)
+
+    # --- 转回 DTensor（如果原本是 DTensor） ---
+    if is_dtensor:
+        from torch.distributed.tensor import distribute_tensor
+        W = distribute_tensor(W, W_orig.device_mesh, [Replicate()])
+        W = W.redistribute(W_orig.device_mesh, W_orig.placements)
+
+    # 恢复原 dtype 和 device
+    module.weight.data = W.to(device=dev, dtype=dtype)
 
 
 def is_pow2(n):

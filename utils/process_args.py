@@ -80,7 +80,7 @@ class TrainingArguments(transformers.TrainingArguments):
     train_dataset: str = field(default="wikitext2", metadata=dict(choices=["wikitext2", "c4", "pdb"], help="Dataset for training"))
     resume_path: str = field(default=None, metadata=dict(help="Path to resume training"))
     evaluation_strategy:str=field(default="no",metadata=dict(choices=["no", "epoch", "steps"]))
-    per_device_train_batch_size: int = field(default=2, metadata=dict(help="Batch size per device for training"))
+    per_device_train_batch_size: int = field(default=1, metadata=dict(help="Batch size per device for training"))
     per_device_eval_batch_size: int = field(default=2, metadata=dict(help="Batch size per device for evaluation"))
     save_strategy:str=field(default="no")
     rotate_ov: bool = field(default=False, metadata=dict(help="Rotate V's output and O's input"))
@@ -107,28 +107,29 @@ class TrainingArguments(transformers.TrainingArguments):
 
     sub_mean:bool = field(default=False,metadata=dict(help="whether to use sub mean"))
     post_attn: bool = field(default=False,metadata=dict(help="whether to use post attn for calculate kl loss"))
-    fsdp: Optional[str] = field(
-        default="full_shard auto_wrap",
-        metadata={
-            "help": "Enable FSDP. For example: 'full_shard auto_wrap'"
-        }
-    )
+    # fsdp: Optional[str] = field(
+    #     default="full_shard auto_wrap",
+    #     metadata={
+    #         "help": "Enable FSDP. For example: 'full_shard auto_wrap'"
+    #     }
+    # )
+    
     # fsdp_transformer_layer_cls_to_wrap: Optional[str] = field(
     #     default="QuantDecoderLayer"
     # )
-    fsdp_config: Optional[Union[dict, str]] = field(
-        default_factory=lambda: {
-            "cpu_ram_efficient_loading": True,
+    # fsdp_config: Optional[Union[dict, str]] = field(
+    #     default_factory=lambda: {
+    #         "cpu_ram_efficient_loading": True,
             
-            "transformer_layer_cls_to_wrap": ["QuantLinear","QuantDecoderLayer"]
-        },
-        metadata={
-            "help": (
-                "Config to be used with FSDP (Pytorch Fully Sharded  Data Parallel). The value is either a "
-                "fsdp json config file (e.g., `fsdp_config.json`) or an already loaded json file as `dict`."
-            )
-        },
-    )
+    #         "transformer_layer_cls_to_wrap": ["QuantLinear","QuantDecoderLayer"]
+    #     },
+    #     metadata={
+    #         "help": (
+    #             "Config to be used with FSDP (Pytorch Fully Sharded  Data Parallel). The value is either a "
+    #             "fsdp json config file (e.g., `fsdp_config.json`) or an already loaded json file as `dict`."
+    #         )
+    #     },
+    # )
 
 def parser_gen():
     parser = argparse.ArgumentParser()
