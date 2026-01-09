@@ -13,7 +13,9 @@ from utils.utils import DEV,rdtype,Rdtype
 from utils import quant_utils
 from geoopt.manifolds import EuclideanStiefel,Stiefel
 import torch.nn.functional as F
-from torch.distributed.fsdp import fully_shard
+# from torch.distributed.fsdp import fully_shard
+from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
+from torch.distributed.fsdp import ShardingStrategy
 def skip(*args,**kwargs):
     pass
      
@@ -123,7 +125,7 @@ class LM:
         model_dim = config.hidden_size
         head_dim = model_dim // config.num_attention_heads
 
-        
+        modelignore=[]
         R_res_value = random_hadamard_matrix(model.config.hidden_size, "cuda") if (not args.use_klt) else klt_R_res(model)
         R_res_module = rotation_utils.RotateModule(R_res_value)
         model.R_res = R_res_module
@@ -243,16 +245,43 @@ class LM:
             
             layer.R_S_modules = nn.ModuleDict(R_S_modules)
             utils.utils.cleanup_memory(False)
-            for child in layer.children():
-                if isinstance(child, (nn.ModuleDict,rotation_utils.RotateModule, smooth_utils.SmoothModule)):
-                    pass
-                else:
-                    fully_shard(child)
-                
-        
+            ignored_modules = [layer.R_S_modules]
+    
+
+            # 包装整个 Layer，而不是只包里面的 Linear
+            model.model.layers[idx] = FSDP(
+                layer,
+                sharding_strategy=ShardingStrategy.FULL_SHARD,
+                ignored_modules=ignored_modules, 
+                device_id=torch.cuda.current_device(),
+                use_orig_params=True,
+                sync_module_states=True, 
+                limit_all_gathers=True
+            )
+                        
+        all_ignored_modules = [
+            m for m in model.modules() 
+            if isinstance(m, (rotation_utils.RotateModule, smooth_utils.SmoothModule))
+        ]
         self.set_temporary(True)  
-        fully_shard(model.model.embed_tokens)    
-        fully_shard(model.lm_head)
+        model.model.norm = FSDP(model.model.norm, device_id=torch.cuda.current_device(), use_orig_params=True)
+        model.lm_head = FSDP(model.lm_head, device_id=torch.cuda.current_device(), use_orig_params=True)
+
+        # 3. 最后包裹整个 Model 根节点 (Root Wrap)
+        # 这一步能把之前所有分散的 FSDP 层串联起来，统一梯度同步逻辑
+        all_ignored = [
+            m for m in model.modules() 
+            if isinstance(m, (rotation_utils.RotateModule, smooth_utils.SmoothModule))
+        ]
+        
+        self.model = FSDP(
+            model,
+            sharding_strategy=ShardingStrategy.FULL_SHARD,
+            ignored_modules=all_ignored,
+            device_id=torch.cuda.current_device(),
+            use_orig_params=True,
+            sync_module_states=True,
+        )
         utils.utils.cleanup_memory(False)
 
     
@@ -491,6 +520,7 @@ def klt_ov(layer,head_dim=128,kv_heads=8):
 def rotate_smooth_model_inplace(model,st_path,training_args,args=None,del_parameters=True):
     utils.utils.cleanup_memory(False)
     st = torch.load(st_path, map_location="cuda")
+    print(st)
     R_res=st["R_res.weight"]
     rotate_embedding_inplace(model,R_res)
     config = model.config

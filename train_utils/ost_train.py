@@ -46,7 +46,30 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
     utils.utils.cleanup_memory()
     if args.train_distribute:
         distribute_model(lm.model)
-
+    args.remove_unused_columns=False
+    train_dataset = manual_cleanup_dataset(train_dataset, lm.model)
+    
+    import gc
+    gc.collect()
+    torch.cuda.empty_cache()
+    import torch.distributed as dist    
+    if dist.is_initialized() and dist.get_world_size() > 1:
+        print(f"--- 正在同步 Rank 0 的旋转矩阵到所有显卡 ---")
+        
+        # 强制所有卡停在这里，防止有的卡跑得太快
+        dist.barrier()
+        
+        with torch.no_grad():
+            for m in lm.model.modules():
+                # 找到你那些被忽略的模块
+                from data_normalization import smooth_utils,rotation_utils
+                if isinstance(m, (rotation_utils.RotateModule, smooth_utils.SmoothModule)):
+                    for param in m.parameters():
+                        dist.broadcast(param.data, src=0)
+        print(lm.model.R_res.weight)
+        # # 同步完成，大家一起出发
+        dist.barrier()
+        print(f"--- 同步完成，开始训练 ---")
     # args.fsdp = "full_shard"
     trainer = MyTrainer(
         model=lm.model,
@@ -61,29 +84,10 @@ def rotate_smooth_train(args, lm: LM,ptq_args,model_args):
 
     trainer.accelerator.prepare = skip_prepare
     trainer.model_wrapped = trainer.model
-    import torch.distributed as dist    
-    if dist.is_initialized() and dist.get_world_size() > 1:
-        print(f"--- 正在同步 Rank 0 的旋转矩阵到所有显卡 ---")
-        
-        # 强制所有卡停在这里，防止有的卡跑得太快
-        dist.barrier()
-        
-        with torch.no_grad():
-            for m in lm.model.modules():
-                # 找到你那些被忽略的模块
-                from data_normalization import smooth_utils,rotation_utils
-                if isinstance(m, (rotation_utils.RotateModule, smooth_utils.SmoothModule)):
-                    for param in m.parameters():
-                        # 把 Rank 0 的初始值分发给所有人，保证“起跑线”绝对一致
-                        dist.broadcast(param.data, src=0)
-        print(lm.model.R_res.weight)
-        # # 同步完成，大家一起出发
-        dist.barrier()
-        print(f"--- 同步完成，开始训练 ---")
     
-    
+    print(f"Is enabled in trainer: {trainer.args.gradient_checkpointing}")
     trainer.train()
-    save_fsdp2_model(lm.model, f"{args.output_dir}/model.bin",param_keys)
+    save_ignored_params_fsdp1(lm.model, f"{args.output_dir}/model.bin",param_keys)
     if args.train_distribute:
         remove_hook_from_module(lm.model)
     return lm
@@ -104,7 +108,19 @@ def save_fsdp2_model(model, save_path,param_keys):
     if torch.distributed.get_rank() == 0:
         torch.save(state_dict, save_path)
         print(f"模型已成功保存至: {save_path}")
-
+def manual_cleanup_dataset(dataset, model):
+    import inspect
+    # 获取模型 forward 的参数列表
+    # 如果 model 是 FSDP 包装过的，尝试访问 model._fsdp_wrapped_module.forward
+    target_module = model._fsdp_wrapped_module if hasattr(model, "_fsdp_wrapped_module") else model
+    signature = inspect.signature(target_module.forward)
+    _signature_columns = list(signature.parameters.keys())
+    
+    # 额外保留 labels，因为它是 Trainer 默认需要的
+    _signature_columns += ["labels", "label", "label_ids"]
+    
+    columns_to_remove = [col for col in dataset.column_names if col not in _signature_columns]
+    return dataset.remove_columns(columns_to_remove)
 def get_train_eval_dataset(args, tokenizer,ptq_args,model_args):
     cache_dir = "./cache/" + model_args.input_model.split("/")[-1] + "_".join(["tokenized", args.train_dataset])
     
@@ -142,7 +158,20 @@ def get_train_eval_dataset(args, tokenizer,ptq_args,model_args):
     eval_dataset = eval_dataset.map(f)
     return tokenized_datasets, eval_dataset
 
+def save_ignored_params_fsdp1(model, save_path, param_keys):
+    state_dict = {}
+    
+    # 直接遍历，因为是 ignored 的，所以 param.data 就是完整的
+    for name, param in model.named_parameters():
+        if name in param_keys:
+            # 直接去掉那层讨厌的前缀存入字典
+            clean_name = name.replace("_fsdp_wrapped_module.", "")
+            state_dict[clean_name] = param.cpu().clone()
 
+    # 只有 Rank 0 负责写入文件
+    if torch.distributed.get_rank() == 0:
+        torch.save(state_dict, save_path)
+        print(f"Ignored parameters 已成功保存至: {save_path}")
 def get_param_keys(model):
     keys = list()
     for k, v in model.named_parameters():
