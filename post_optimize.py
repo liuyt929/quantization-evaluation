@@ -13,7 +13,7 @@ from transformers import LlamaTokenizerFast,LlamaForCausalLM,AutoTokenizer,AutoM
 
 import transformers
 # from models.modeling_llama import LlamaForCausalLM
-from utils import data_utils, eval_utils, utils,fuse_norm_utils,hadamard_utils,quant_utils,eval
+from utils import data_utils, eval_utils, utils,fuse_norm_utils,hadamard_utils,quant_utils,eval,memory_utils
 from utils.process_args import process_args_ptq
 from data_normalization.utils import rotate_smooth_model_inplace
 from tqdm import tqdm
@@ -88,7 +88,14 @@ def train() -> None:
     # model = accelerator.prepare(model)
     
     model.eval()
+    # memory_utils.distributed_memory_snapshot("before fuse", getattr(training_args, 'output_dir', None))
     fuse_norm_utils.fuse_layer_norms(model)
+    # import gc
+    # gc.collect()
+    # torch.cuda.empty_cache()
+    # print(model)\
+    torch.cuda.reset_peak_memory_stats(device=1)
+    memory_utils.distributed_memory_snapshot("after fuse", getattr(training_args, 'output_dir', None))
     model_utils.rotate_smooth_model_inplace(model,training_args.output_dir+'/model.bin',training_args)
     # accelerator.prepare(model)
     model.seqlen = training_args.model_max_length
@@ -114,7 +121,7 @@ def train() -> None:
         quant_utils.add_actquant(
             model
         )  # Add Activation Wrapper to the model as the rest of the code assumes it is present
-    
+    memory_utils.distributed_memory_snapshot("before gptq", getattr(training_args, 'output_dir', None))
 
     if ptq_args.enable_low_rank and ptq_args.w_rtn:
         qlayers = quant_utils.find_qlayers(model, layers=[quant_utils.ActQuantWrapper])
@@ -211,12 +218,15 @@ def train() -> None:
                 sym=layer_a_sym,
                 clip_ratio=layer_a_clip,
             )
-   
+    memory_utils.distributed_memory_snapshot("after wrap and gptq", getattr(training_args, 'output_dir', None))
+    
+    
     # Add Input Quantization
     # model = accelerator.prepare(model)
     dataset_ppl = eval_utils.evaluator(model, testloader, ptq_args,accelerator)
     log.info("wiki2 ppl is: {}".format(dataset_ppl))
     eval.evaluation(model,tokenizer)
+    memory_utils.distributed_memory_snapshot("after wrap and gptq", getattr(training_args, 'output_dir', None))
     # dist.barrier()
 if __name__ == "__main__":
     train()

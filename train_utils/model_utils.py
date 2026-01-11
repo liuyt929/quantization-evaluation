@@ -10,12 +10,13 @@ from data_normalization import smooth_utils,rotation_utils
 # from transformers import LlamaForCausalLM
 from models.modeling_llama import LlamaForCausalLM
 from utils.utils import DEV,rdtype,Rdtype
-from utils import quant_utils
+from utils import quant_utils,memory_utils
 from geoopt.manifolds import EuclideanStiefel,Stiefel
 import torch.nn.functional as F
 # from torch.distributed.fsdp import fully_shard
 from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
 from torch.distributed.fsdp import ShardingStrategy
+
 def skip(*args,**kwargs):
     pass
      
@@ -519,8 +520,8 @@ def klt_ov(layer,head_dim=128,kv_heads=8):
 
 def rotate_smooth_model_inplace(model,st_path,training_args,args=None,del_parameters=True):
     utils.utils.cleanup_memory(False)
-    st = torch.load(st_path, map_location="cuda")
-    print(st)
+    compute_device="cpu"
+    st = torch.load(st_path, map_location=compute_device)
     R_res=st["R_res.weight"]
     rotate_embedding_inplace(model,R_res)
     config = model.config
@@ -529,6 +530,8 @@ def rotate_smooth_model_inplace(model,st_path,training_args,args=None,del_parame
     else:
         num_kv_heads = config.num_attention_heads
     rotate_head_inplace(model,R_res)
+    
+    # memory_utils.distributed_memory_snapshot("before layer inplace", getattr(training_args, 'output_dir', None))
     for idx,layer in enumerate(tqdm.tqdm(model.model.layers,desc="rotate_inplacing")):
         R_S_modules={}
         hadamard_utils.apply_exact_had_to_linear(layer.mlp.down_proj,had_dim=-1,output=False)
@@ -546,6 +549,7 @@ def rotate_smooth_model_inplace(model,st_path,training_args,args=None,del_parame
             R_S_modules['R_ov']=R_list
         
         rotate_layer_inplace(model,R_S_modules,R_res,layer,training_args)
+        memory_utils.distributed_memory_snapshot("after layer inplace", getattr(training_args, 'output_dir', None))
         del R_S_modules
         torch.cuda.empty_cache()
 
@@ -556,19 +560,24 @@ def rotate_embedding_inplace(model,R_res):
     embed_tokens = model.model.embed_tokens
     embed_tokens.temporary = False
     RD = torch.float64
-
-    embed_tokens.weight.data = ((embed_tokens.weight.to(device=DEV,dtype=RD)) @ (R_res.to(dtype=RD,device=utils.utils.DEV))).to(dtype=embed_tokens.weight.dtype,device=embed_tokens.weight.device)
+    ori_device=embed_tokens.weight.device
+    cpudevice='cpu'
+    embed_tokens.weight.data = ((embed_tokens.weight.to(device=cpudevice,dtype=RD)) @ (R_res.to(dtype=RD,device=cpudevice))).to(dtype=embed_tokens.weight.dtype,device=ori_device)
 
 def rotate_head_inplace(model,R_res):
     head = model.lm_head
     RD = torch.float64
-    head.weight.data = torch.matmul(head.weight.to(dtype=RD,device=DEV),R_res.to(dtype=RD,device=DEV)).to(dtype=head.weight.dtype,device=head.weight.device)
+    ori_device=head.weight.device
+    cpudevice='cpu'
+    head.weight.data = torch.matmul(head.weight.to(dtype=RD,device=cpudevice),R_res.to(dtype=RD,device=cpudevice)).to(dtype=head.weight.dtype,device=ori_device)
 
 
 def rotate_layer_inplace(model,R_S_modules,R_res,layer:QuantDecoderLayer,training_args):
     ori_dev = layer.self_attn.q_proj.weight.device
+    cpu_dev= torch.device("cpu")
+    RD_DTYPE = torch.float64
     RD = torch.float64
-    layer.to(DEV)
+    layer.to(cpu_dev)
     
     config = model.config
     if hasattr(config,"num_key_value_heads"):
@@ -673,10 +682,11 @@ def rotate_layer_inplace(model,R_S_modules,R_res,layer:QuantDecoderLayer,trainin
             v.bias.data = (b.unsqueeze(1) @ R_ov.to(RD)).squeeze(1).reshape(-1)
             # v.bias.data = (v.bias.reshape(num_kv_heads,head_dim).unsqueeze(2).to(RD) @ R_ov.to(RD)).reshape(v.bias.shape)
         
-        
+        memory_utils.distributed_memory_snapshot("before R-ov", getattr(training_args, 'output_dir', None))
         if layer.self_attn.num_key_value_groups != 1:
             h, d1, d2 = R_ov.shape
             repeated_R_ov = R_ov[:,None,:,:].expand(h, layer.self_attn.num_key_value_groups, d1, d2).reshape(-1, d1, d2)
+            memory_utils.distributed_memory_snapshot("after R-ov", getattr(training_args, 'output_dir', None))
             o.weight.data = (o.weight.reshape(-1,num_attn_heads,head_dim).unsqueeze(2).to(RD) @ repeated_R_ov.to(RD)).reshape(o.weight.shape)
         else:
             o.weight.data = (o.weight.reshape(-1,num_attn_heads,head_dim).unsqueeze(2).to(RD) @ R_ov.to(RD)).reshape(o.weight.shape)
